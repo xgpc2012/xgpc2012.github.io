@@ -11,6 +11,9 @@ require.config({
 require(["swiper"], function() {
     //初始化首页轮播图
     var mySwiper = new Swiper ('.swiper-container', {
+        autoplay: 2000,
+        effect : 'fade',
+        autoplayDisableOnInteraction : false,
         direction: 'horizontal',
         loop: true,
         // 分页器
@@ -18,6 +21,8 @@ require(["swiper"], function() {
         // 前进后退按钮
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
-
+        onClick: function(swiper){
+            mySwiper.slideNext();
+        }
     })
 });

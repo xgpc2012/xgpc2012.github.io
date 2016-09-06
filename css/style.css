@@ -1,25 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 .b1{
     border: 1px solid red;
 }
 .b2{
     border: 1px solid black;
 }
-.bg-red{
-    background-color: red;
-}
 .swiper-container {
-    width: 600px;
-    height: 300px;
+    width: 640px;
+    height: 360px;
 }
-.bg-html5{
-    background: url("../images/HTML5.png");
+.bg1{
+    background: url("../images/bg1.jpg");
     background-size: 100% 100%;
 }
-.bg-css3{
-    background: url("../images/CSS3.png");
+.bg2{
+    background: url("../images/bg2.jpg");
     background-size: 100% 100%;
 }
-.bg-javascript{
-    background: url("../images/HTML5.png");
+.bg3{
+    background: url("../images/bg3.jpg");
     background-size: 100% 100%;
+}
+.mar-t40{
+    margin-top: 40px;
+}
+.pad-l40{
+    padding-left: 40px;
 }
