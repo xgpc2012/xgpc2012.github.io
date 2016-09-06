@@ -1,3 +1,25 @@
-.t-red{
-    color: #ff0000;
+.b1{
+    border: 1px solid red;
+}
+.b2{
+    border: 1px solid black;
+}
+.bg-red{
+    background-color: red;
+}
+.swiper-container {
+    width: 600px;
+    height: 300px;
+}
+.bg-html5{
+    background: url("../images/HTML5.png");
+    background-size: 100% 100%;
+}
+.bg-css3{
+    background: url("../images/CSS3.png");
+    background-size: 100% 100%;
+}
+.bg-javascript{
+    background: url("../images/HTML5.png");
+    background-size: 100% 100%;
 }

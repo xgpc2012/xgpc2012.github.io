@@ -2,16 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>彭畅畅的个人主页</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/lib/swiper-3.3.1.min.css">
+    <script data-main="js/main" src="js/require.js"></script>
 </head>
 <body>
-<h1>Hello World!</h1>
-<p class="t-red">我是PC</p>
+<header>这是顶部</header>
+<h1>轮播图</h1>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide bg-html5"></div>
+        <div class="swiper-slide bg-css3"></div>
+        <div class="swiper-slide bg-javascript"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <!--<div class="swiper-button-prev"></div>-->
+    <!--<div class="swiper-button-next"></div>-->
+</div>
 <h2>前端开发知识点：</h2>
 <label>HTML&CSS：</label>
 <p>对Web标准的理解、浏览器内核差异、兼容性、hack、CSS基本功：布局、盒子模型、选择器优先级、
     HTML5、CSS3、Flexbox
 </p>
+<footer>这是底部</footer>
 </body>
 </html>
