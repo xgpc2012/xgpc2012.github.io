@@ -17,11 +17,11 @@ html,body{
     height: 100%;
 }
 .bg1{
-    background: url("../images/bg1.jpg");
+    background: url("../images/bg1.jpeg");
     background-size: 100% 100%;
 }
 .bg2{
-    background: url("../images/bg2.jpg");
+    background: url("../images/bg2.jpeg");
     background-size: 100% 100%;
 }
 .bg3{
