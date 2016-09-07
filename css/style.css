@@ -8,9 +8,13 @@
 .b2{
     border: 1px solid black;
 }
+html,body{
+    width: 100%;
+    height: 100%;
+}
 .swiper-container {
-    width: 16em;
-    height: 10em;
+    width: 100%;
+    height: 100%;
 }
 .bg1{
     background: url("../images/bg1.jpg");
