@@ -1,19 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>彭畅畅的个人主页</title>
+    <title>欢迎页</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper-3.3.1.min.css">
+    <script data-main="js/main" src="js/require.js"></script>
 </head>
 <body>
-<header>这是顶部</header>
-<div class="pad-l40">
-    <h2>前端开发知识点：</h2>
-    <label>HTML&CSS：</label>
-    <p>对Web标准的理解、浏览器内核差异、兼容性、hack、CSS基本功：布局、盒子模型、选择器优先级、
-        HTML5、CSS3、Flexbox
-    </p>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide bg1"></div>
+        <div class="swiper-slide bg2"></div>
+        <div class="swiper-slide bg3"></div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+
+    <!--&lt;!&ndash; 如果需要导航按钮 &ndash;&gt;-->
+    <!--<div class="swiper-button-prev"></div>-->
+    <!--<div class="swiper-button-next"></div>-->
+
+    <!--&lt;!&ndash; 如果需要滚动条 &ndash;&gt;-->
+    <!--<div class="swiper-scrollbar"></div>-->
 </div>
 </body>
 </html>
