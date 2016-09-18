@@ -5,7 +5,7 @@ require.config({
     baseUrl: "js/lib",
     paths: {
         swiper: "swiper-3.3.1.min",
-        jquery:"http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min",
+        jquery:"https://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min",
     }
 });
 
