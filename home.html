@@ -8,8 +8,10 @@
 </head>
 <body>
 <h1>嗨，我是PC的个人主页</h1>
-<a href="JsCore.html">点击进入JavaScript核心部分</a>
-<div id="request1" onclick="ajaxDemo()">请求测试</div>
+<a href="JsCore.html">点击进入JavaScript核心部分</a><br/>
+<h1></h1>
+<button id="request1" onclick="ajaxDemo()">请求测试</button>
+<div id="status"></div>
 </body>
 <script>
     //使用原生XHR对象实现AJAX请求
@@ -41,6 +43,5 @@
         xhr.open("get", "http://route.showapi.com/9-2?showapi_appid=5668&showapi_sign=000bca6e40344eafb11c68cf28a8bf43&area=武汉", true);
         xhr.send(null);
     }
-
 </script>
 </html>
