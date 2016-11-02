@@ -5,7 +5,6 @@ require.config({
     baseUrl: "js/lib",
     paths: {
         swiper: "swiper-3.3.1.min",
-        jquery: "https://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min",
     }
 });
 
@@ -28,10 +27,14 @@ require(["swiper"], function () {
     })
 });
 
-require(["jquery"], function () {
-    $("#go").on("click", function () {
-        window.location.href = "home.html";
-    })
+require(["method"], function (m) {
+    var ev = m.EventUtil;
+    var go=m.getEl("go");
+    if(go){
+        ev.addHandler(go, "click", function () {
+            window.location.href = "home.html";
+        })
+    }
 })
 
 require(["method"], function (m) {
@@ -52,9 +55,9 @@ require(["method"], function (m) {
 
     var div2 = m.getEl("div2");
     ev.addHandler(div2, "mouseover", function () {
-        m.startChange(100, 10, div2);
+        m.show(1000, div2);
     })
     ev.addHandler(div2, "mouseout", function () {
-        m.startChange(20, -10, div2);
+        m.hide(1000, div2);
     })
 })

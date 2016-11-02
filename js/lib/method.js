@@ -3,7 +3,7 @@
  */
 define(function () {
     var timer = null;
-    var alpha = 20;
+    var alpha = 1;
     //跨浏览器的事件处理程序
     var EventUtil = {
         //添加事件
@@ -61,18 +61,32 @@ define(function () {
     };
 
     //淡入淡出
-    var startChange = function (iTarget, speed, el) {
+    var hide = function (speed, el) {
         clearInterval(timer);
         timer = setInterval(function () {
-            if (alpha == iTarget) {
+            if (alpha == 1) {
                 clearInterval(timer);
             } else {
-                alpha += speed;
+                alpha -= 10000/speed;
                 el.style.filter = "alpha(opacity:" + alpha + ")";
                 el.style.opacity = alpha / 100;
             }
         }, 50)
     };
+
+    var show = function (speed, el) {
+        clearInterval(timer);
+        timer = setInterval(function () {
+            if (alpha == 100) {
+                clearInterval(timer);
+            } else {
+                alpha += 10000/speed;
+                el.style.filter = "alpha(opacity:" + alpha + ")";
+                el.style.opacity = alpha / 100;
+            }
+        }, 50)
+    };
+
     var AJAX = function (url, type, data) {
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
@@ -100,10 +114,12 @@ define(function () {
     var getEl= function (id) {
         return document.getElementById(id);
     }
+
     return {
+        show:show,
+        hide:hide,
         startMove: startMove,
         getEl:getEl,
-        startChange: startChange,
         AJAX:AJAX,
         EventUtil:EventUtil
     }

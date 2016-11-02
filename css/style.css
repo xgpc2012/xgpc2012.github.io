@@ -83,6 +83,6 @@ html, body {
     height: 300px;
     width: 300px;
     background-color: red;
-    filter: alpha(opacity:20);
-    opacity: 0.2;
+    filter: alpha(opacity:10);
+    opacity: 0.1;
 }
