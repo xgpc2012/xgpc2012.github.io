@@ -37,7 +37,7 @@ require(["jquery"], function () {
 require(["method"], function (m) {
     var ev = m.EventUtil;
     //侧边栏运动
-    var div1 = document.getElementById("div1");
+    var div1 = m.getEl("div1");
     ev.addHandler(div1, "mouseover", function () {
         m.startMove(0, 10, div1);
     })
@@ -45,16 +45,16 @@ require(["method"], function (m) {
         m.startMove(-150, -10, div1);
     })
 
-    var request1 = document.getElementById("request1");
-    request1.addEventListener("click", function () {
+    var request1 = m.getEl("request1");
+    ev.addHandler(request1, "click", function () {
         m.AJAX("https://route.showapi.com/9-2?showapi_appid=5668&showapi_sign=000bca6e40344eafb11c68cf28a8bf43&area=武汉", "get", null);
     }, false);
 
-    var oDiv2 = document.getElementById("div2");
-    oDiv2.onmouseover = function () {
-        m.startChange(100, 10, oDiv2);
-    }
-    oDiv2.onmouseout = function () {
-        m.startChange(20, -10, oDiv2);
-    }
+    var div2 = m.getEl("div2");
+    ev.addHandler(div2, "mouseover", function () {
+        m.startChange(100, 10, div2);
+    })
+    ev.addHandler(div2, "mouseout", function () {
+        m.startChange(20, -10, div2);
+    })
 })

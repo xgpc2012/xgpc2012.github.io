@@ -96,8 +96,13 @@ define(function () {
         xhr.open(type, url, true);
         xhr.send(data);
     };
+
+    var getEl= function (id) {
+        return document.getElementById(id);
+    }
     return {
         startMove: startMove,
+        getEl:getEl,
         startChange: startChange,
         AJAX:AJAX,
         EventUtil:EventUtil
