@@ -4,44 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script data-main="js/main" src="js/require.js"></script>
     <title>彭畅的个人主页</title>
 </head>
 <body>
-<h1>嗨，我是PC的个人主页</h1>
 <a href="JsCore.html">点击进入JavaScript核心部分</a><br/>
 <h1></h1>
 <button id="request1" onclick="ajaxDemo()">请求测试</button>
 <div id="status"></div>
+<div id="div1">
+    <span>侧边栏</span>
+</div>
+<div id="div2"></div>
 </body>
-<script>
-    //使用原生XHR对象实现AJAX请求
-    function ajaxDemo() {
-        var xhr = new XMLHttpRequest();
-        xhr.onload = function (event) {
-            if (xhr.readyState == 4) {
-                if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
-                    console.log(xhr.responseText);
-                } else {
-                    console.log("Request was unsuccessful: " + xhr.status);
-                }
-            }
-        };
-        xhr.onprogress = function (event) {
-            var divStatus = document.getElementById("status");
-            if (event.loaded) {
-                var node = document.createElement("div");
-                node.innerHTML = "Received " + event.loaded + " of " +
-                        event.total + " bytes";
-                divStatus.appendChild(node);
-            }
-        };
-        var data = {
-            showapi_appid: "5668",
-            showapi_sign: "000bca6e40344eafb11c68cf28a8bf43",
-            area: "wuhan"
-        };
-        xhr.open("get", "https://route.showapi.com/9-2?showapi_appid=5668&showapi_sign=000bca6e40344eafb11c68cf28a8bf43&area=武汉", true);
-        xhr.send(null);
-    }
-</script>
 </html>
