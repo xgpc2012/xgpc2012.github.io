@@ -60,4 +60,5 @@ require(["method"], function (m) {
     ev.addHandler(div2, "mouseout", function () {
         m.hide(1000, div2);
     })
+    m.openMask(0);
 })
