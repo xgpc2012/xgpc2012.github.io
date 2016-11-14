@@ -5,7 +5,8 @@ define(function () {
     var timer = null;
     var alpha = 1;
     //跨浏览器的事件处理程序
-    var EventUtil = {
+    var EventUtil;
+    EventUtil = {
         //添加事件
         addHandler: function (element, type, handler) {
             if (element.addEventListener) {
@@ -87,63 +88,54 @@ define(function () {
         }, 50)
     };
 
-    var AJAX = function (url, type, data) {
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-            console.log(xhr.readyState + " " + new Date());
-        }
-        xhr.onload = function (event) {
-            if (xhr.readyState == 4) {
-                if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
-                    console.log(xhr.responseText);
-                } else {
-                    console.log("Request was unsuccessful: " + xhr.status);
-                }
-            }
-        };
-        xhr.onprogress = function (event) {
-            var divStatus = document.getElementById("status");
-            if (event.loaded) {
-
-            }
-        };
-        xhr.open(type, url, true);
-        xhr.send(data);
-    };
-
-    var getEl = function (id) {
-        return document.getElementById(id);
-    }
-
-    /**
-     * 遮罩层
-     *  * @param String opacity  遮罩透明度，不传则为0.40
-     */
-    var openMask = function (opacity) {
-        if (!document.getElementById("mask")) {
-            var newMask = document.createElement("div");
-            newMask.id = "mask";
-            newMask.style.position = "absolute";
-            newMask.style.zIndex = "888888";
-            var _scrollWidth = Math.max(document.body.scrollWidth, document.documentElement.scrollWidth);
-            var _scrollHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
-            newMask.style.width = _scrollWidth + "px";
-            newMask.style.height = _scrollHeight + "px";
-            newMask.style.top = "0px";
-            newMask.style.left = "0px";
-            newMask.style.background = '#000';
-            newMask.style.opacity = opacity+"" ? opacity : '0.40';
-            document.body.appendChild(newMask);
-        }
-    }
-
     return {
         show: show,
         hide: hide,
         startMove: startMove,
-        getEl: getEl,
-        AJAX: AJAX,
-        openMask: openMask,
+        getEl: function (id) {
+            return document.getElementById(id);
+        },
+        AJAX: function (url, type, data) {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                console.log(xhr.readyState + " " + new Date());
+            }
+            xhr.onload = function (event) {
+                if (xhr.readyState == 4) {
+                    if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+                        console.log(xhr.responseText);
+                    } else {
+                        console.log("Request was unsuccessful: " + xhr.status);
+                    }
+                }
+            };
+            xhr.onprogress = function (event) {
+                var divStatus = document.getElementById("status");
+                if (event.loaded) {
+
+                }
+            };
+            xhr.open(type, url, true);
+            xhr.send(data);
+        }
+        ,
+        openMask: function (opacity) {
+            if (!document.getElementById("mask")) {
+                var newMask = document.createElement("div");
+                newMask.id = "mask";
+                newMask.style.position = "absolute";
+                newMask.style.zIndex = "888888";
+                var _scrollWidth = Math.max(document.body.scrollWidth, document.documentElement.scrollWidth);
+                var _scrollHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+                newMask.style.width = _scrollWidth + "px";
+                newMask.style.height = _scrollHeight + "px";
+                newMask.style.top = "0px";
+                newMask.style.left = "0px";
+                newMask.style.background = '#000';
+                newMask.style.opacity = opacity + "" ? opacity : '0.40';
+                document.body.appendChild(newMask);
+            }
+        },
         EventUtil: EventUtil
     }
 })

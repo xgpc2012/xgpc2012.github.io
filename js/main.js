@@ -4,7 +4,7 @@
 require.config({
     baseUrl: "js/lib",
     paths: {
-        swiper: "swiper-3.3.1.min",
+        swiper: "swiper-3.3.1.min"
     }
 });
 
@@ -60,5 +60,5 @@ require(["method"], function (m) {
     ev.addHandler(div2, "mouseout", function () {
         m.hide(1000, div2);
     })
-    m.openMask(0);
+    //m.openMask(0);
 })
