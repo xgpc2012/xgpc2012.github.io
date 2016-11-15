@@ -5,37 +5,16 @@ require.config({
     baseUrl: "js/lib",
     paths: {
         swiper: "swiper-3.3.1.min",
-        vue:"vue-min"
+        vue:"vue-min",
+        jquery:"jquery-3.1.0.min",
+        bootstrap:"bootstrap.min"
     }
 });
-//require(["swiper"], function () {
-//    //初始化首页轮播图
-//    var mySwiper = new Swiper('.swiper-container', {
-//        autoplay: 2000,
-//        effect: 'fade',
-//        autoplayDisableOnInteraction: false,
-//        autoplayStopOnLast: true,
-//        direction: 'horizontal',
-//        // 分页器
-//        pagination: '.swiper-pagination',
-//        // 前进后退按钮
-//        nextButton: '.swiper-button-next',
-//        prevButton: '.swiper-button-prev',
-//        onClick: function (swiper) {
-//            mySwiper.slideNext();
-//        }
-//    })
-//});
 
-//require(["method"], function (m) {
-//    var ev = m.EventUtil;
-//    var go=m.getEl("go");
-//    if(go){
-//        ev.addHandler(go, "click", function () {
-//            window.location.href = "home.html";
-//        })
-//    }
-//})
+//载入jquery和bootstrap模块
+require(["jquery","bootstrap"], function ($,bs) {
+
+});
 
 //require(["method"], function (m) {
 //    var ev = m.EventUtil;

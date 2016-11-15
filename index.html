@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/lib/vue.min.js"></script>
+    <script data-main="js/main" src="js/require.js"></script>
     <title>彭畅的个人博客主页</title>
 </head>
 <body class="bg-e1 pad-t75">
@@ -53,7 +53,7 @@
                             </div>
                             <textarea class="form-control b-e1" rows="3"></textarea>
                         </div>
-                        <div class="btn btn-primary pull-right pad-lr20">发布</div>
+                        <div class="btn btn-primary pull-right pad-lr20" data-toggle="modal" data-target="#layer">发布</div>
                     </form>
                 </div>
                 <!--发布内容结束-->
@@ -238,16 +238,24 @@
         </div>
     </div>
 </div>
+<!--模态框-->
+<div role="dialog" class="modal fade" id="layer">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+                <h4 class="modal-title">确认要发布该动态吗？</h4>
+            </div>
+            <div class="modal-body text-right">
+                <button class="btn btn-primary" data-dismiss="modal">取消</button>
+                <button class="btn btn-danger" data-dismiss="modal">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
-    //    var app1 = new Vue({
-    //        el: "#blog",
-    //        data: {},
-    //        methods: {
-    //            test: function () {
-    //                alert("!");
-    //            }
-    //        }
-    //    })
 </script>
 </body>
 </html>
