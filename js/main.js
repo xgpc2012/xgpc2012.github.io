@@ -4,10 +4,10 @@
 require.config({
     baseUrl: "js/lib",
     paths: {
-        swiper: "swiper-3.3.1.min"
+        swiper: "swiper-3.3.1.min",
+        vue:"vue-min"
     }
 });
-
 //require(["swiper"], function () {
 //    //初始化首页轮播图
 //    var mySwiper = new Swiper('.swiper-container', {
