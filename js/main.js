@@ -6,7 +6,7 @@ require.config({
     paths: {
         swiper: "swiper-3.3.1.min",
         vue: "vue.min",
-        jquery: "jquery-3.1.0.min",
+        jquery: "jquery.min",
         bootstrap: "bootstrap.min"
     }
 });
@@ -27,5 +27,8 @@ require(["jquery", "bootstrap"], function ($, bs) {
             $hide_friends.slideUp();
             $line1.show();
         }
+    })
+    $(".like").on("click", function () {
+        $(this).toggleClass("icon-like2");
     })
 });
