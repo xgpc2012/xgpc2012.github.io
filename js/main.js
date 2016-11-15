@@ -5,33 +5,27 @@ require.config({
     baseUrl: "js/lib",
     paths: {
         swiper: "swiper-3.3.1.min",
-        vue:"vue-min",
-        jquery:"jquery-3.1.0.min",
-        bootstrap:"bootstrap.min"
+        vue: "vue.min",
+        jquery: "jquery-3.1.0.min",
+        bootstrap: "bootstrap.min"
     }
 });
 
 //载入jquery和bootstrap模块
-require(["jquery","bootstrap"], function ($,bs) {
-
+require(["jquery", "bootstrap"], function ($, bs) {
+    var $more = $("#more"),
+        $hide_friends = $("#hide_friends"),
+        $p = $more.find("p"),
+        $line1=$("#line1");
+    $more.on("click", function () {
+        if ($p.text() == "展开更多") {
+            $p.text("隐藏更多");
+            $hide_friends.slideDown();
+            $line1.hide();
+        } else {
+            $p.text("展开更多");
+            $hide_friends.slideUp();
+            $line1.show();
+        }
+    })
 });
-
-require(["method"], function (m) {
-    var ev = m.EventUtil;
-    //侧边栏运动
-    var div1 = m.getEl("div1");
-    ev.addHandler(div1, "mouseover", function () {
-        m.startMove(0, 10, div1);
-    })
-    ev.addHandler(div1, "mouseout", function () {
-        m.startMove(-100, -10, div1);
-    })
-    var div2 = m.getEl("div2");
-    ev.addHandler(div2, "mouseover", function () {
-        m.show(1000, div2);
-    })
-    ev.addHandler(div2, "mouseout", function () {
-        m.hide(1000, div2);
-    })
-    //m.openMask(0);
-})

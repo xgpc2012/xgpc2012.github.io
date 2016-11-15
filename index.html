@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <script data-main="js/main" src="js/lib/vue.min.js"></script>
     <script data-main="js/main" src="js/require.js"></script>
     <title>彭畅的个人博客主页</title>
 </head>
@@ -20,7 +21,7 @@
         </div>
         <div class="fl inline">
             <ul class="top_nav">
-                <li class="t-b">首页</li>
+                <li>首页</li>
                 <li>热门</li>
                 <li>发现</li>
                 <li>邮箱</li>
@@ -63,7 +64,7 @@
                     <div class="status">
                         <div class="bg-w pad-a20 br-t4">
                             <div class="o-h">
-                                <div class="icon-avatar icon-size80 fl"></div>
+                                <div class="icon-avatar br-50 icon-size80 fl"></div>
                                 <div class="fl mar-l20">
                                     <p class="mar-t20">xgpc2012</p>
                                     <p class="t-9a mar-t16 in-b fz-14">3小时前</p>
@@ -98,7 +99,7 @@
                     <div class="status mar-t20">
                         <div class="bg-w pad-a20 br-t4">
                             <div class="o-h">
-                                <div class="icon-avatar icon-size80 fl"></div>
+                                <div class="icon-avatar br-50 icon-size80 fl"></div>
                                 <div class="fl mar-l20">
                                     <p class="mar-t20">xgpc2012</p>
                                     <p class="t-9a mar-t16 in-b fz-14">3小时前</p>
@@ -135,14 +136,14 @@
         </div>
         <!--个人档-->
         <div class="left_nav">
-            <div class="icon-avatar center icon-size120"></div>
+            <div class="icon-avatar br-50 center icon-size120"></div>
             <p class="mar-t34">xgpc2012</p>
             <p class="mar-t26 fz-14">事无巨细，悉究本末</p>
             <div class="about_me">
                 <p class="mar-t48 fz-14">关于我</p>
                 <div class="pad-l60 mar-t16">
                     <div class="icon-size16 icon-birth in-b"></div>
-                    <p class="in-b">1994.02.21</p>
+                    <span class="in-b">1994.02.21</span>
                 </div>
                 <div class="pad-l60 mar-t16">
                     <div class="icon-size16 icon-work in-b"></div>
@@ -230,9 +231,29 @@
                             </div>
                         </div>
                     </div>
-                    <div class="b1 mar-t16 b-e1"></div>
+                    <div id="hide_friends" style="display: none;">
+                        <div class="mar-t28">
+                            <div class="icon-size60 icon-avatar1 fl"></div>
+                            <div class="h-60">
+                                <div class="pad-t14">
+                                    <p class="t-b fz-14">张全蛋</p>
+                                    <p class="t-b fz-14 t-9a mar-t16">富土康流水线工人</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mar-t28">
+                            <div class="icon-size60 icon-avatar1 fl"></div>
+                            <div class="h-60">
+                                <div class="pad-t14">
+                                    <p class="t-b fz-14">张全蛋</p>
+                                    <p class="t-b fz-14 t-9a mar-t16">富土康流水线工人</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b1 mar-t16 b-e1" id="line1"></div>
                 </div>
-                <div class="pad-bt20">
+                <div class="pad-bt20" id="more">
                     <p class="tx-c t-9a fz-14">展开更多</p>
                 </div>
             </div>
@@ -251,7 +272,7 @@
             </div>
             <div class="modal-body text-right">
                 <button class="btn btn-primary" data-dismiss="modal">取消</button>
-                <button class="btn btn-danger" data-dismiss="modal">确认</button>
+                <button class="btn btn-danger" data-dismiss="modal" @click="test()">确认</button>
             </div>
         </div>
     </div>

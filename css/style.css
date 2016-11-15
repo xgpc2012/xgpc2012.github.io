@@ -230,6 +230,10 @@
     font-size: 14px;
 }
 
+.top_nav li:hover{
+    color: orange;
+}
+
 .left_nav span {
     color: white;
     font-size: 14px;
@@ -276,7 +280,16 @@
 .status_tab span{
     color: white;
 }
-
+.about_me span{
+    vertical-align: top;
+    position: relative;
+    top:2px;
+}
+.contact_me span{
+    vertical-align: top;
+    position: relative;
+    top:2px;
+}
 /*图标类样式*/
 .icon-avatar {
     background-image: url("icons/icon-avatar.png");
@@ -415,6 +428,9 @@
     height: 170px;
 }
 
+.br-50 {
+    border-radius: 50%;
+}
 .br-4 {
     border-radius: 4px;
 }
