@@ -457,3 +457,22 @@
 textarea {
     resize: none;
 }
+
+#div1 {
+    width: 100px;
+    height: 200px;
+    background: lightpink;
+    position: absolute;
+    top: 200px;
+    left: -100px;
+}
+
+#div1 span {
+    position: absolute;
+    width: 20px;
+    height: 60px;
+    line-height: 20px;
+    background: white;
+    right: -20px;
+    top: 70px;
+}
