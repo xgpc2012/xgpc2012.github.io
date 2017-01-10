@@ -6,13 +6,23 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/swiper-3.3.1.min.css">
+    <script src="js/lib/swiper-3.3.1.min.js"></script>
     <script src="js/adapt.js"></script>
 </head>
 <body>
 <div class="pad-bt28 pad-lr28">
     <p class="fz-032">特朗普:不看《纽约时报》多活20年</p>
 </div>
-<div class="bg1"></div>
+<!--<div class="bg1"></div>-->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide bg1"></div>
+        <div class="swiper-slide bg2"></div>
+        <div class="swiper-slide bg3"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
 <div class="box b1 v-c pad-lr24 b-b b-f2 pad-bt24">
     <div class="pad-r22">
         <p>英媒：卡斯特罗去世之际古巴正处于十字路口</p>
@@ -46,5 +56,44 @@
         <div class="list3"></div>
     </div>
 </div>
+<div class="box b1 v-c pad-lr24 b-b b-f2 pad-bt24">
+    <div class="pad-r22">
+        <p>美国记者：中国火锅“火遍”哥伦布，价格不便宜</p>
+        <div class="box fz-26 t-99 mar-t3 ">
+            <p class="mar-r16">环球网<p></p>1小时前</p>
+        </div>
+    </div>
+    <div>
+        <div class="list3"></div>
+    </div>
+</div>
+<div class="box b1 v-c pad-lr24 b-b b-f2 pad-bt24">
+    <div class="pad-r22">
+        <p>美国记者：中国火锅“火遍”哥伦布，价格不便宜</p>
+        <div class="box fz-26 t-99 mar-t3 ">
+            <p class="mar-r16">环球网<p></p>1小时前</p>
+        </div>
+    </div>
+    <div>
+        <div class="list3"></div>
+    </div>
+</div>
+<div class="box b1 v-c pad-lr24 b-b b-f2 pad-bt24">
+    <div class="pad-r22">
+        <p>美国记者：中国火锅“火遍”哥伦布，价格不便宜</p>
+        <div class="box fz-26 t-99 mar-t3 ">
+            <p class="mar-r16">环球网<p></p>1小时前</p>
+        </div>
+    </div>
+    <div>
+        <div class="list3"></div>
+    </div>
+</div>
+<script>
+    var mySwiper = new Swiper ('.swiper-container', {
+        autoplay: 3000,//可选选项，自动滑动
+        pagination : '.swiper-pagination',
+    })
+</script>
 </body>
 </html>

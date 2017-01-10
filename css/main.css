@@ -170,8 +170,23 @@ iframe{
     border-bottom: 1px solid #f2f2f2;
     flex-wrap: nowrap;
 }
+.swiper-container{
+    height: 4.22rem;
+}
 .bg1{
     background-image: url("../images/bg11.png");
+    width: 7.5rem;
+    height: 4.22rem;
+    background-size: 100% 100%;
+}
+.bg2{
+    background-image: url("../images/bg1.jpeg");
+    width: 7.5rem;
+    height: 4.22rem;
+    background-size: 100% 100%;
+}
+.bg3{
+    background-image: url("../images/bg2.jpeg");
     width: 7.5rem;
     height: 4.22rem;
     background-size: 100% 100%;
