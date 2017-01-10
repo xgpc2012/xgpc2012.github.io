@@ -1,0 +1,142 @@
+.box {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+}
+
+.h-c {
+    justify-content: center;
+}
+
+.v-c {
+    align-items: center;
+}
+.center{
+    justify-content: center;
+    align-items: center;
+}
+.f1 {
+    -moz-box-flex: 1;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    width: 100%;
+}
+
+.b1 {
+    border: 1px solid red;
+}
+
+.header {
+    height: 0.98rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.footer {
+    height: 0.98rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-shadow:0 0 0.3rem gray;
+}
+.content{
+    position: absolute;
+    bottom: 0.98rem;
+    top:0.98rem;
+    width: 100%;
+    overflow: auto;
+}
+.fz-1{
+    font-size: 0.22rem;
+}
+.fz-032{
+    font-size: 0.32rem;
+}
+.icon-news {
+    background-image: url("icons/icon-news.png");
+}
+
+.icon-act .icon-news {
+    background-image: url("icons/icon-news-act.png");
+}
+
+.icon-video {
+    background-image: url("icons/icon-video.png");
+}
+
+.icon-act .icon-video {
+    background-image: url("icons/icon-video-act.png");
+}
+
+.icon-follow {
+    background-image: url("icons/icon-follow.png");
+}
+
+.icon-act .icon-follow {
+    background-image: url("icons/icon-follow-act.png");
+}
+
+.icon-me {
+    background-image: url("icons/icon-me.png");
+}
+
+.icon-act .icon-me {
+    background-image: url("icons/icon-me-act.png");
+}
+
+.icon-size1 {
+    height: 0.5rem;
+    width: 0.5rem;
+    background-size: 100% 100%;
+}
+.t-ff{
+    color: #ff4640;
+}
+.tx-c{
+    text-align: center;
+}
+.mar-375{
+    margin-top: 0.375em;
+}
+.mar-r3{
+    margin-right: 3rem;
+}
+.pad-lr15{
+    padding-left:0.15rem;
+    padding-right: 0.15rem;
+}
+.pad-lr3{
+    padding-left:0.3rem;
+    padding-right: 0.3rem;
+}
+.pad-bt28{
+    padding-bottom: 0.28rem;
+    padding-top: 0.28rem;
+}
+.br05{
+    border-radius: 0.5rem;
+}
+iframe{
+    width: 100%;
+    height: 99%;
+}
+.b-p{
+    border-color: pink;
+}
+.b-f2{
+    border-color: #f2f2f2;
+}
+.header p{
+    white-space:nowrap;
+}
+.header div{
+    height: 100%;
+    overflow-x: scroll;
+    border-bottom: 1px solid #f2f2f2;
+    flex-wrap: nowrap;
+}
+.bg1{
+    background-image: url("../images/bg11.png");
+    width: 7.5rem;
+    height: 4.22rem;
+    background-size: 100% 100%;
+}
