@@ -2,282 +2,240 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>QA首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/lib/jquery-3.1.0.min.js"></script>
-    <script data-main="js/main" src="js/require.js"></script>
-    <title>彭畅的个人博客主页</title>
+    <link rel="stylesheet" href="css/idangerous.swiper.css">
+    <script type="text/javascript">
+        /**判断终端设备类型**/
+        var browser = {
+            wapUrl: 'dist/index.html',
+            versions:function(){
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {
+                    //mobile: !!u.match(/AppleWebKit.*Mobile.*/)||!!u.match(/AppleWebKit/), //是否为移动终端
+                    mobile: u.match(/(iPhone|iPod|Android|ios|iPad)/i),
+                };
+            }()
+        }
+        if (browser.versions.mobile && browser.wapUrl != '')
+        {
+            location.href = browser.wapUrl;
+        }
+    </script>
 </head>
-<body class="bg-e1 pad-t75">
-<!--<div id="div1"><span class="bg-9d">侧边栏</span></div>-->
-<div id="blog">
-    <!--顶部导航-->
-    <div class="header lh-80 bg-w">
-        <div class="fl w-265 inline">
-            <div class="pad-l28 fz-30">
-                <span class="t-9a">xgpc2012</span>
+<body>
+<div id="header" class="header header-index">
+    <div class="header-banner">
+        <div class="header-container container">
+            <div class="header-logo-wrap">
+                <a href="https://www.chinaums.com/chinaums/">
+                    <img src="images/logo.png" alt="chinaums">
+                </a>
+            </div>
+            <div class="header-nav-wrap">
+                <ul class="header-nav-bar">
+                    <li><a href=""><span>首页</span></a></li>
+                    <li><a href=""><span>学院</span></a></li>
+                    <li><a href=""><span>招聘</span></a></li>
+                    <li><a href=""><span>测试服务</span></a></li>
+                </ul>
+            </div>
+            <div class="header-user-wrap">
+                <a class="j-login-popup" href="">登录</a>
+                <span class="nav-header-splitter">|</span>
+                <a href="" target="_blank" class="navbar-link">注册</a>
             </div>
         </div>
-        <div class="fl inline">
-            <ul class="top_nav">
-                <li>首页</li>
-                <li>热门</li>
-                <li>发现</li>
-                <li>邮箱</li>
-                <li>消息</li>
-                <li>我的关注</li>
-                <li>
-                    <div class="icon-more"></div>
-                </li>
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/banner.png" width="100%">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/banner2.png" width="100%">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/banner3.jpg" width="100%">
+            </div>
+        </div>
+        <div class="pagination"></div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="main-content clear">
+        <div class="left-content">
+            <ul class="academy-index-tab">
+                <li class="active">全部</li>
+                <li data-type="1">行业动态</li>
+                <li data-type="2">干货分享</li>
             </ul>
+            <div class="academy-index-content">
+            </div>
+            <a href="" class="academy-more-article">查看更多</a>
         </div>
-        <div class="fl w-265 inline h-100 tx-r">
-            <div class="pad-r28">
-                <div class="icon-size16 icon-user in-b"></div>
-                <p class="in-b t-50 mar-l15">xgpc2012</p>
-                <div class="icon-size16 icon-select in-b mar-l15"></div>
-            </div>
-        </div>
-    </div>
-    <div id="content" class="">
-        <!--中部主体内容-->
-        <div class="main">
-            <div class="main_content pad-a20">
-                <!--发布内容-->
-                <div class="main_top b-4 bg-w">
-                    <form role="form" class="pad-lr20 o-h pad-b12">
-                        <div class="form-group">
-                            <p class="pad-t16 pad-b12 fz-14 in-b">发布内容</p>
-                            <div class="pull-right">
-                                <p class="pad-t16 pad-b12 fz-14 in-b" style="letter-spacing:12px;">公开</p>
-                                <div class="icon-select in-b"></div>
-                            </div>
-                            <textarea class="form-control b-e1" rows="3"></textarea>
-                        </div>
-                        <div class="btn btn-primary pull-right pad-lr20" data-toggle="modal" data-target="#layer">发布</div>
-                    </form>
-                </div>
-                <!--发布内容结束-->
-                <!--个人动态列表-->
-                <div class="main_center mar-t20">
-                    <div class="status">
-                        <div class="bg-w pad-a20 br-t4">
-                            <div class="o-h">
-                                <div class="icon-avatar br-50 icon-size80 fl"></div>
-                                <div class="fl mar-l20">
-                                    <p class="mar-t20">xgpc2012</p>
-                                    <p class="t-9a mar-t16 in-b fz-14">3小时前</p>
-                                    <div class="icon-address2 in-b mar-l16"></div>
-                                    <p class="fz-14 in-b t-9a">北京 五道口</p>
-                                </div>
-                                <div class="pull-right mar-t16">
-                                    <div class="icon-size16 icon-star"></div>
-                                </div>
-                            </div>
-                            <p class="fz-14 t-9a mar-t20">开始工作！</p>
-                            <div class="o-h mar-t16">
-                                <div class="bg1 fl"></div>
-                                <div class="bg2 fl mar-l16"></div>
-                            </div>
-                        </div>
-                        <div class="bg-6a status_tab br-b4 tx-c">
-                            <div class="third pull-left">
-                                <div class="icon-size16 icon-see in-b"></div>
-                                <span>125</span>
-                            </div>
-                            <div class="third pull-left">
-                                <div class="icon-size16 icon-msg in-b"></div>
-                                <span>23</span>
-                            </div>
-                            <div class="third pull-left">
-                                <div class="icon-size16 icon-like in-b like"></div>
-                                <span>36</span>
-                            </div>
+        <!--主内容右边-->
+        <div class="right-bar">
+            <div class="hot-product-sidebar-wrap sidebar-wrap">
+                <div class="sidebar-title">热点资讯</div>
+                <div class="hot-product-wrap">
+                    <div class="hot-product-item ub1">
+                        <img class="hot-product-icon" src="images/jwylkfu.png">
+                        <div class="hot-product-content">
+                            <a target="_blank" class="hot-product-content-title"
+                               href="https://www.chinaums.com/chinaums/zt/zfjcx/">“支付+”创新服务</a>
+                            <div>银联商务“支付+”</div>
                         </div>
                     </div>
-                    <div class="status mar-t20">
-                        <div class="bg-w pad-a20 br-t4">
-                            <div class="o-h">
-                                <div class="icon-avatar br-50 icon-size80 fl"></div>
-                                <div class="fl mar-l20">
-                                    <p class="mar-t20">xgpc2012</p>
-                                    <p class="t-9a mar-t16 in-b fz-14">3小时前</p>
-                                    <div class="icon-address2 in-b mar-l16"></div>
-                                    <p class="fz-14 in-b t-9a">北京 五道口</p>
-                                </div>
-                                <div class="pull-right mar-t16">
-                                    <div class="icon-size16 icon-star"></div>
-                                </div>
-                            </div>
-                            <p class="fz-14 t-9a mar-t20">开始工作！</p>
-                            <div class="o-h mar-t16">
-                                <div class="bg1 fl"></div>
-                                <div class="bg2 fl mar-l16"></div>
-                            </div>
-                        </div>
-                        <div class="bg-6a status_tab br-b4 tx-c">
-                            <div class="third pull-left">
-                                <div class="icon-size16 icon-see in-b"></div>
-                                <span>125</span>
-                            </div>
-                            <div class="third pull-left">
-                                <div class="icon-size16 icon-msg in-b"></div>
-                                <span>23</span>
-                            </div>
-                            <div class="third pull-left">
-                                <div class="icon-size16 icon-like in-b like"></div>
-                                <span>36</span>
-                            </div>
+                    <div class="hot-product-item">
+                        <img class="hot-product-icon" src="images/bank_card.png">
+                        <div class="hot-product-content">
+                            <a target="_blank" class="hot-product-content-title"
+                               href="https://www.chinaums.com/chinaums/zt/nczfjs/">农村支付建设</a>
+                            <div>银联商务农村支付建设</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!--个人档-->
-        <div class="left_nav">
-            <div class="icon-avatar br-50 center icon-size120"></div>
-            <p class="mar-t34">xgpc2012</p>
-            <p class="mar-t26 fz-14">事无巨细，悉究本末</p>
-            <div class="about_me">
-                <p class="mar-t48 fz-14">关于我</p>
-                <div class="pad-l60 mar-t16">
-                    <div class="icon-size16 icon-birth in-b"></div>
-                    <span class="in-b">1994.02.21</span>
-                </div>
-                <div class="pad-l60 mar-t16">
-                    <div class="icon-size16 icon-work in-b"></div>
-                    <span class="in-b">前端开发工程师</span>
-                </div>
-                <div class="pad-l60 mar-t16">
-                    <div class="icon-size16 icon-address in-b"></div>
-                    <span class="in-b">湖北 武汉</span>
-                </div>
-                <div class="pad-l60 mar-t16">
-                    <div class="icon-size16 icon-hobby in-b"></div>
-                    <span class="in-b">篮球、游戏</span>
-                </div>
+            <div class="article-selection-area">
+                <ul>
+                    <li class="article-selection-title">小编精选</li>
+                    <li class="article-selection-item"><a href="">今夜，放一只专做搞怪测试的SmartMonkey</a></li>
+                    <li class="article-selection-item"><a href="">如何让媒体用户更快接入百度移动联盟|无线流量对接解决方案</a></li>
+                    <li class="article-selection-item"><a href="">怎样做只有灵魂的螃蟹</a></li>
+                    <li class="article-selection-item"><a href="">测试的行业危机</a></li>
+                    <li class="article-selection-item"><a href="">Android系统9月市场占有率出炉：棉花糖成第一？</a></li>
+                </ul>
             </div>
-            <div class="contact_me">
-                <p class="mar-t48 fz-14">联系我</p>
-                <div class="pad-l60 mar-t20">
-                    <div class="icon-size16 icon-tel in-b"></div>
-                    <span class="in-b">15827523228</span>
-                </div>
-                <div class="pad-l60 mar-t16">
-                    <div class="icon-size16 icon-weixin in-b"></div>
-                    <span class="in-b">xgpc1994</span>
-                </div>
-                <div class="pad-l60 mar-t16">
-                    <div class="icon-size16 icon-qq in-b"></div>
-                    <span class="in-b">605123543</span>
-                </div>
-            </div>
-        </div>
-        <div class="right_nav">
-            <div class="weather mar-t20 br-4">
-                <div class="bg-w br-r4 half fr">
-                    <div class="pad-t16">
-                        <div class="icon-weather center"></div>
-                        <p class="t-6a fz-14 mar-t20">多云转晴</p>
+            <div class="follow-sidebar-wrap sidebar-wrap">
+                <div class="sidebar-title">关注我们</div>
+                <div class="follow-qrcode-wrap">
+                    <div class="follow-qrcode-item">
+                        <img class="follow-qa-sidebar-qrcode" src="images/wxfuh.png" alt="银联商务微信服务号">
+                        <div>银联商务微信服务号</div>
                     </div>
-                </div>
-                <div class="bg-6a br-l4 half">
-                    <div class="pad-t16">
-                        <p class="fz-14">2016年11月</p>
-                        <p class="fz-48 mar-t28">16</p>
-                        <p class="fz-14 mar-t34">星期三</p>
+                    <div class="follow-qrcode-item">
+                        <img class="follow-mtc-sidebar-qrcode" src="images/weixin_bg.png" alt="银联商务微信订阅号">
+                        <div>银联商务微信订阅号</div>
                     </div>
-                </div>
-            </div>
-            <div class="mar-t20 br-4 friends bg-w" style="overflow: hidden">
-                <div class="pad-l32">
-                    <p class="t-b fz-14">我的好友</p>
-                </div>
-                <div class="pad-l28 pad-r28">
-                    <div class="mar-t28">
-                        <div class="icon-size60 icon-avatar1 fl"></div>
-                        <div class="h-60">
-                            <div class="pad-t14">
-                                <p class="t-b fz-14">张全蛋</p>
-                                <p class="t-b fz-14 t-9a mar-t16">富土康流水线工人</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mar-t28">
-                        <div class="icon-size60 icon-avatar1 fl"></div>
-                        <div class="h-60">
-                            <div class="pad-t14">
-                                <p class="t-b fz-14">张全蛋</p>
-                                <p class="t-b fz-14 t-9a mar-t16">富土康流水线工人</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mar-t28">
-                        <div class="icon-size60 icon-avatar1 fl"></div>
-                        <div class="h-60">
-                            <div class="pad-t14">
-                                <p class="t-b fz-14">张全蛋</p>
-                                <p class="t-b fz-14 t-9a mar-t16">富土康流水线工人</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mar-t28">
-                        <div class="icon-size60 icon-avatar1 fl"></div>
-                        <div class="h-60">
-                            <div class="pad-t14">
-                                <p class="t-b fz-14">张全蛋</p>
-                                <p class="t-b fz-14 t-9a mar-t16">富土康流水线工人</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="hide_friends" style="display: none;">
-                        <div class="mar-t28">
-                            <div class="icon-size60 icon-avatar1 fl"></div>
-                            <div class="h-60">
-                                <div class="pad-t14">
-                                    <p class="t-b fz-14">张全蛋</p>
-                                    <p class="t-b fz-14 t-9a mar-t16">富土康流水线工人</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mar-t28">
-                            <div class="icon-size60 icon-avatar1 fl"></div>
-                            <div class="h-60">
-                                <div class="pad-t14">
-                                    <p class="t-b fz-14">张全蛋</p>
-                                    <p class="t-b fz-14 t-9a mar-t16">富土康流水线工人</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="b1 mar-t16 b-e1" id="line1"></div>
-                </div>
-                <div class="pad-bt20" id="more">
-                    <p class="tx-c t-9a fz-14">展开更多</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!--模态框-->
-<div role="dialog" class="modal fade" id="layer">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">
-                    <span>&times;</span>
-                </button>
-                <h4 class="modal-title">确认要发布该动态吗？</h4>
+<!--页面底部-->
+<div id="footer" class="footer">
+    <div class="container">
+        <div class="footer-main clear">
+            <div class="about item-group">
+                <div class="item-wrap">
+                    <div class="category">关于QA首页</div>
+                    <div class="item"><a href="">关于我们</a></div>
+                    <div class="item"><a href="">加入我们</a></div>
+                </div>
             </div>
-            <div class="modal-body text-right">
-                <button class="btn btn-primary" data-dismiss="modal">取消</button>
-                <button class="btn btn-danger" data-dismiss="modal" @click="test()">确认</button>
+            <div class="service item-group">
+                <div class="item-wrap">
+                    <div class="category">测试服务</div>
+                    <div class="item"><a target="_blank" href="">自动化测试</a></div>
+                    <div class="item"><a target="_blank" href="">人工测试</a></div>
+                    <div class="item"><a target="_blank" href="">问卷调研</a></div>
+                </div>
+            </div>
+            <div class="friend-link item-group">
+                <div class="item-wrap">
+                    <div class="category">友情链接</div>
+                    <div class="item"><a target="_blank" href="">MTC</a></div>
+                    <div class="item"><a target="_blank" href="">APIstore</a></div>
+                </div>
+            </div>
+            <div class="contact item-group">
+                <div class="item-wrap">
+                    <div class="category">联系我们</div>
+                    <a href="mailto:qa-public@baidu.com" class="item"><i class="fa fa-envelope"></i>office@chinaums.com</a>
+                </div>
             </div>
         </div>
     </div>
+    <div class="bottom">
+        <p>&copy;2017 chinaums&nbsp;|&nbsp;<a href="http://qa.baidu.com">银联商务</a>&nbsp;|&nbsp;<a
+                rel="nofollow" target="_blank" href="http://www.miibeian.gov.cn">沪ICP备05003469号</a></p>
+    </div>
 </div>
+<script id="article" type="text/html">
+    {{each list as value i}}
+    {{if value.type==aType||aType==""}}
+    <div class="academy-list">
+        <img src="http://bj.bcebos.com/mtcapp//jpg/705dedad86915c1afa8b29bdcb485b37.jpg">
+        <div class="article-main">
+            <div class="article-header">
+                {{if value.type==2}}
+                <span class="shares-icon">干货分享</span>
+                {{else}}
+                <span class="mtc-news-icon">行业动态</span>
+                {{/if}}
+                <a href="article_detail.html">
+                    <h2>Android App性能测试白皮书 | 流量、电量、弱网环境怎么测？</h2>
+                </a>
+            </div>
+            <div class="article-section">
+                <p>安卓App性能测试白皮书最后一章——
+                    应用后台开着，电量很快没了，流量很快没了，怎么办？！
+                    没有在弱网环境下经历过考验的App，都不能叫好App！</p>
+            </div>
+            <div class="article-footer">
+                <span>作者：张宇</span>
+                <span>2017-01-16</span>
+                <a target="_blank" class="article-comments">评论（0）</a>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    {{/each}}
+</script>
+<script src="js/template.js"></script>
+<script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/idangerous.swiper.js"></script>
 <script>
+    var data = {
+        aType: "",
+        list: [{"type": 1}, {"type": 1}, {"type": 2}, {"type": 1}, {"type": 2}]
+    }
+    $(".academy-index-tab li").on("click", function () {
+        $(".academy-index-tab li").removeClass("active");
+        $(this).addClass("active");
+        var type = $(this).data("type");
+        data.aType = type || "";
+        showList(data);
+    })
+    $(".header-nav-bar li").hover(function () {
+        $(".header-nav-bar a").removeClass("t-6a");
+        $(this).find("a").addClass("t-6a");
+    }, function () {
+        $(".header-nav-bar a").removeClass("t-6a");
+    })
+    function showList(data) {
+        var html = template("article", data);
+        $(".academy-index-content").html(html);
+    }
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: 3000,
+        autoplayDisableOnInteraction : false,
+        pagination : '.pagination',
+        paginationClickable :true,
+        loop:true
+    })
+    showList(data);
 </script>
 </body>
 </html>
