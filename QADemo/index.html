@@ -18,7 +18,7 @@
         /**判断终端设备类型**/∫
         var browser = {
             wapUrl: 'dist/index.html',
-            versions:function(){
+            versions: function () {
                 var u = navigator.userAgent, app = navigator.appVersion;
                 return {
                     //mobile: !!u.match(/AppleWebKit.*Mobile.*/)||!!u.match(/AppleWebKit/), //是否为移动终端
@@ -26,8 +26,7 @@
                 };
             }()
         }
-        if (browser.versions.mobile && browser.wapUrl != '')
-        {
+        if (browser.versions.mobile && browser.wapUrl != '') {
             location.href = browser.wapUrl;
         }
     </script>
@@ -230,10 +229,10 @@
     }
     var mySwiper = new Swiper('.swiper-container', {
         autoplay: 3000,
-        autoplayDisableOnInteraction : false,
-        pagination : '.pagination',
-        paginationClickable :true,
-        loop:true
+        autoplayDisableOnInteraction: false,
+        pagination: '.pagination',
+        paginationClickable: true,
+        loop: true
     })
     showList(data);
 </script>
