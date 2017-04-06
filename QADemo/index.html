@@ -14,11 +14,12 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/idangerous.swiper.css">
+    <link rel="stylesheet" href="css/main.css">
     <script type="text/javascript">
         /**判断终端设备类型**/
         var browser = {
             wapUrl: 'dist/index.html',
-            versions: function () {
+            versions:function(){
                 var u = navigator.userAgent, app = navigator.appVersion;
                 return {
                     //mobile: !!u.match(/AppleWebKit.*Mobile.*/)||!!u.match(/AppleWebKit/), //是否为移动终端
@@ -26,7 +27,8 @@
                 };
             }()
         }
-        if (browser.versions.mobile && browser.wapUrl != '') {
+        if (browser.versions.mobile && browser.wapUrl != '')
+        {
             location.href = browser.wapUrl;
         }
     </script>
@@ -81,7 +83,7 @@
             </ul>
             <div class="academy-index-content">
             </div>
-            <a href="" class="academy-more-article">查看更多</a>
+            <a class="academy-more-article" id="more">查看更多</a>
         </div>
         <!--主内容右边-->
         <div class="right-bar">
@@ -173,68 +175,39 @@
 </div>
 <script id="article" type="text/html">
     {{each list as value i}}
-    {{if value.type==aType||aType==""}}
+    <!--{{if value.type==aType||aType==""}}-->
     <div class="academy-list">
         <img src="http://bj.bcebos.com/mtcapp//jpg/705dedad86915c1afa8b29bdcb485b37.jpg">
         <div class="article-main">
             <div class="article-header">
-                {{if value.type==2}}
-                <span class="shares-icon">干货分享</span>
-                {{else}}
-                <span class="mtc-news-icon">行业动态</span>
-                {{/if}}
-                <a href="article_detail.html">
-                    <h2>Android App性能测试白皮书 | 流量、电量、弱网环境怎么测？</h2>
-                </a>
+                <!--{{if value.type==2}}-->
+                <!--<span class="shares-icon">干货分享</span>-->
+                <!--{{else}}-->
+                <!--<span class="mtc-news-icon">行业动态</span>-->
+                <!--{{/if}}-->
+                <div class="a-title">
+                    <h2>{{value.title}}</h2>
+                </div>
             </div>
             <div class="article-section">
-                <p>安卓App性能测试白皮书最后一章——
-                    应用后台开着，电量很快没了，流量很快没了，怎么办？！
-                    没有在弱网环境下经历过考验的App，都不能叫好App！</p>
+                <p>{{value.plainText}}</p>
             </div>
             <div class="article-footer">
-                <span>作者：张宇</span>
-                <span>2017-01-16</span>
-                <a target="_blank" class="article-comments">评论（0）</a>
+                <span class="mar-r15">来源：{{value.src}}</span>
+                <span>{{value.time}}</span>
+                <!--<a target="_blank" class="article-comments">评论（0）</a>-->
             </div>
         </div>
     </div>
-    {{/if}}
+    <!--{{/if}}-->
     {{/each}}
 </script>
 <script src="js/template.js"></script>
 <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/idangerous.swiper.js"></script>
+<script src="js/index.js"></script>
 <script>
-    var data = {
-        aType: "",
-        list: [{"type": 1}, {"type": 1}, {"type": 2}, {"type": 1}, {"type": 2}]
-    }
-    $(".academy-index-tab li").on("click", function () {
-        $(".academy-index-tab li").removeClass("active");
-        $(this).addClass("active");
-        var type = $(this).data("type");
-        data.aType = type || "";
-        showList(data);
-    })
-    $(".header-nav-bar li").hover(function () {
-        $(".header-nav-bar a").removeClass("t-6a");
-        $(this).find("a").addClass("t-6a");
-    }, function () {
-        $(".header-nav-bar a").removeClass("t-6a");
-    })
-    function showList(data) {
-        var html = template("article", data);
-        $(".academy-index-content").html(html);
-    }
-    var mySwiper = new Swiper('.swiper-container', {
-        autoplay: 3000,
-        autoplayDisableOnInteraction: false,
-        pagination: '.pagination',
-        paginationClickable: true,
-        loop: true
-    })
-    showList(data);
+    getNews(0,"财经");
 </script>
 </body>
 </html>

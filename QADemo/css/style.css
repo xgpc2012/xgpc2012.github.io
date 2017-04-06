@@ -245,6 +245,7 @@
 
 .article-section {
     margin: 14px 0;
+    text-overflow: ellipsis;
 }
 
 .article-section p {

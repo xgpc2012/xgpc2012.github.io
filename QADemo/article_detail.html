@@ -46,17 +46,17 @@
 <div id="content-wrapper">
     <div class="breadCrumb">
         <a href="/academy/article">学院</a>&nbsp;<span>&gt;</span>&nbsp;<a
-            href="/academy/article/type/2">干货分享</a>&nbsp;<span>&gt;</span>&nbsp;<span>文章详情</span>
+            href="/academy/article/type/2">财经信息</a>&nbsp;<span>&gt;</span>&nbsp;<span>文章详情</span>
     </div>
     <div class="container academy-detail-wrap">
         <div id="academy-main-wrap">
             <div class="article1">
                 <div class="aheader">
-                    <h2>Android应用的耗电量的统计分析方法和工具</h2>
+                    <h2 id="atitle"></h2>
                     <span class="academy-detail-article-info">
-                        <span class="article-info-item">作者：张宇</span>
-                        <span class="article-info-item">来源：百度QA</span>
-                        <span class="article-info-item">2017-01-16</span>
+                        <!--<span class="article-info-item">作者：张宇</span>-->
+                        <span class="article-info-item">来源：<span id="src"></span></span>
+                        <span class="article-info-item" id="time"></span>
                         <span class="article-info-item">
                             <i class="fa fa-comment"></i>
                         </span>
@@ -64,14 +64,12 @@
                             <i class="fa fa-eye"></i>
                             <span>12938</span>
                         </span>
-                        <a class="article-type-tag" href="/academy/article/type/2">干货分享</a>
+                        <!--<a class="article-type-tag" href="/academy/article/type/2">干货分享</a>-->
                     </span>
                 </div>
                 <!--文章正文-->
-                <div class="article-rich-text">
-                    <iframe src="" frameborder="0" id="iframe1">
+                <div class="article-rich-text" id="adetail">
 
-                    </iframe>
                 </div>
             </div>
         </div>
@@ -165,32 +163,11 @@
     </div>
 </div>
 <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/index.js"></script>
 <script>
-    function getArticle() {
-        $.ajax({
-            //你请求的地址
-            url: "http://gank.io/api/data/Android/10/1",
-            //你请求的方式
-            type: "GET",
-            data: {
-                //这两个是shopapi网址提供接口必传的参数
-            },
-            dataType: "json",
-            success: function (data) {
-                //data是从服务器端返回来的数据
-                var res = data.results;
-                //console.log(res[0].url);
-                var $iframe1=$("#iframe1");
-                $iframe1.attr("src",res[1].url);
-                $iframe1.css("min-width","800px");
-            },
-            error: function () {
-                //如果请求失败
-                console.log("请求失败");
-            }
-        })
-    }
-    getArticle();
+    var title=localStorage.getItem("title");
+    $("#atitle").text(title);
+    getArticleDetail(title);
 </script>
 </body>
 </html>

@@ -173,3 +173,8 @@ div.breadCrumb {
     background-color: #1392e9;
     text-decoration: none;
 }
+
+#adetail p{
+    font-size: 18px;
+    line-height: 36px;
+}
