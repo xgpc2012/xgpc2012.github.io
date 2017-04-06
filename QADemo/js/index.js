@@ -34,7 +34,7 @@ function getNews(start,channel) {
     // })
     $.ajax({
         //你请求的地址
-        url: "http://api.jisuapi.com/news/get",
+        url: "https://api.jisuapi.com/news/get",
         //你请求的方式
         type: "GET",
         data: {
@@ -68,7 +68,7 @@ function getNews(start,channel) {
 function getArticleDetail(title){
     $.ajax({
         //你请求的地址
-        url: "http://api.jisuapi.com/news/get",
+        url: "https://api.jisuapi.com/news/get",
         //你请求的方式
         type: "GET",
         data: {
