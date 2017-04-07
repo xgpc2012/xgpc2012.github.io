@@ -91,9 +91,9 @@ function getArticleDetail(title){
                     $("#adetail").html(li.content);
                     $("#src").text(li.src);
                     $("#time").text(li.time);
+                    console.log(li);
                 }
             }
-            console.log(res);
         },
         error: function () {
             //如果请求失败

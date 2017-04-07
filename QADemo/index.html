@@ -79,8 +79,8 @@
         <div class="left-content">
             <ul class="academy-index-tab">
                 <li class="active">全部</li>
-                <li data-type="1">行业动态</li>
-                <li data-type="2">干货分享</li>
+                <li data-type="1">财经信息</li>
+                <!--<li data-type="2">干货分享</li>-->
             </ul>
             <div class="academy-index-content">
             </div>
@@ -208,7 +208,9 @@
 <script src="js/idangerous.swiper.js"></script>
 <script src="js/index.js"></script>
 <script>
-    getNews(0,"财经");
+    $(document).ready(function () {
+        getNews(0,"财经");
+    })
 </script>
 </body>
 </html>
