@@ -18,7 +18,7 @@
     <script type="text/javascript">
         /**判断终端设备类型**/
         var browser = {
-            wapUrl: 'phone/dist/index.html',
+            wapUrl: 'dist/index.html',
             versions:function(){
                 var u = navigator.userAgent, app = navigator.appVersion;
                 return {
@@ -48,7 +48,7 @@
                     <li><a href=""><span>学院</span></a></li>
                     <li><a href=""><span>招聘</span></a></li>
                     <li><a href=""><span>测试服务</span></a></li>
-                    <li><a href="phone/index.html"><span>设备管理</span></a></li>
+                    <li><a href="../QAdemoWebApp/phone/index.html"><span>设备管理</span></a></li>
                 </ul>
             </div>
             <div class="header-user-wrap">
@@ -178,7 +178,7 @@
     {{each list as value i}}
     <!--{{if value.type==aType||aType==""}}-->
     <div class="academy-list">
-        <img src="http://bj.bcebos.com/mtcapp//jpg/705dedad86915c1afa8b29bdcb485b37.jpg">
+        <img src="{{value.pic?value.pic:'http://bj.bcebos.com/mtcapp//jpg/705dedad86915c1afa8b29bdcb485b37.jpg'}}">
         <div class="article-main">
             <div class="article-header">
                 <!--{{if value.type==2}}-->
