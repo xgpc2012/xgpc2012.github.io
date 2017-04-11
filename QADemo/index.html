@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/idangerous.swiper.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="phone/css/global.css">
     <script type="text/javascript">
         /**判断终端设备类型**/
         var browser = {
@@ -38,23 +39,29 @@
     <div class="header-banner">
         <div class="header-container container">
             <div class="header-logo-wrap">
-                <a href="https://www.chinaums.com/chinaums/">
+                <a href="index.html">
                     <img src="images/logo.png" alt="chinaums">
                 </a>
             </div>
             <div class="header-nav-wrap">
                 <ul class="header-nav-bar">
-                    <li><a href=""><span>首页</span></a></li>
-                    <li><a href=""><span>学院</span></a></li>
-                    <li><a href=""><span>招聘</span></a></li>
-                    <li><a href=""><span>测试服务</span></a></li>
-                    <li><a href="../QAdemoWebApp/phone/index.html"><span>设备管理</span></a></li>
+                    <li><a href="index.html"><span>首页</span></a></li>
+                    <li><a href="phone/index.html"><span>设备管理</span></a></li>
+                    <li><a href="tech_share/index.html"><span>技术分享</span></a></li>
                 </ul>
             </div>
             <div class="header-user-wrap">
-                <a class="j-login-popup" href="">登录</a>
-                <span class="nav-header-splitter">|</span>
-                <a href="" target="_blank" class="navbar-link">注册</a>
+                <a id="login" class="login j-login-popup" href="phone/login.html?source=../index.html">登录</a>
+                <div id="accountPulldown" class="accountPulldown" style="display: none;">
+                    <ul>
+                    <li class="changeAccount"><a href="phone/login.html">切换账号</a></li>
+                        <li class="personalinfo"><a href="phone/personalInfo.html">账户信息</a></li>
+                        <li id="logout" class="logout"><a href="#" onclick="$.qa.logout();return false;">注销账号</a></li>
+                        <li class="updatePassword"><a href="phone/updatePassword.html">更换密码</a></li>
+                    </ul>
+                </div>
+                <span class="register nav-header-splitter">|</span>
+                <a href="phone/register.html" class="register navbar-link">注册</a>
             </div>
         </div>
     </div>
@@ -74,12 +81,13 @@
     </div>
 </div>
 
+
 <div class="container">
     <div class="main-content clear">
         <div class="left-content">
             <ul class="academy-index-tab">
-                <li class="active">全部</li>
-                <li data-type="1">财经信息</li>
+                <li class="active">财经信息</li>
+                <li data-type="1">测试资讯</li>
                 <!--<li data-type="2">干货分享</li>-->
             </ul>
             <div class="academy-index-content">
@@ -213,4 +221,14 @@
     })
 </script>
 </body>
+
+
+    <script type="text/javascript" src="phone/js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="phone/js/global.js"></script>
+    <script type="text/javascript">
+        (function () {
+            $.qa.getLoginedInfo();
+        }());
+    </script>
+
 </html>
