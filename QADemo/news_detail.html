@@ -47,7 +47,7 @@
 <div id="content-wrapper">
     <div class="breadCrumb">
         <a href="index.html">学院</a>&nbsp;<span>&gt;</span>&nbsp;<a
-            href="index.html">测试资讯</a>&nbsp;<span>&gt;</span>&nbsp;<span>文章详情</span>
+            href="index.html">财经信息</a>&nbsp;<span>&gt;</span>&nbsp;<span>文章详情</span>
     </div>
     <div class="container academy-detail-wrap">
         <div id="academy-main-wrap">
@@ -55,9 +55,9 @@
                 <div class="aheader">
                     <h2 id="atitle"></h2>
                     <span class="academy-detail-article-info">
-                        <span class="article-info-item">作者: <span id="who">&nbsp;&nbsp;</span></span>
-                        <!--<span class="article-info-item">来源：<span id="src"></span></span>-->
-                        <span class="article-info-item">发布时间: <span id="time"></span></span>
+                        <!--<span class="article-info-item">作者：张宇</span>-->
+                        <span class="article-info-item">来源：<span id="src"></span></span>
+                        <span class="article-info-item" id="time"></span>
                         <!--<span class="article-info-item">-->
                             <!--<i class="fa fa-comment"></i>-->
                         <!--</span>-->
@@ -166,9 +166,9 @@
 <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/index.js"></script>
 <script>
-    var gid=localStorage.getItem("gid");
-//    console.log(gid);
-    getAtriclesDetail(gid);
+    var title=localStorage.getItem("title");
+    $("#atitle").text(title);
+    getNewsDetail(title);
 </script>
 </body>
 </html>

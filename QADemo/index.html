@@ -20,7 +20,7 @@
         /**判断终端设备类型**/
         var browser = {
             wapUrl: 'dist/index.html',
-            versions:function(){
+            versions: function () {
                 var u = navigator.userAgent, app = navigator.appVersion;
                 return {
                     //mobile: !!u.match(/AppleWebKit.*Mobile.*/)||!!u.match(/AppleWebKit/), //是否为移动终端
@@ -28,8 +28,7 @@
                 };
             }()
         }
-        if (browser.versions.mobile && browser.wapUrl != '')
-        {
+        if (browser.versions.mobile && browser.wapUrl != '') {
             location.href = browser.wapUrl;
         }
     </script>
@@ -54,7 +53,7 @@
                 <a id="login" class="login j-login-popup" href="phone/login.html?source=../index.html">登录</a>
                 <div id="accountPulldown" class="accountPulldown" style="display: none;">
                     <ul>
-                    <li class="changeAccount"><a href="phone/login.html">切换账号</a></li>
+                        <li class="changeAccount"><a href="phone/login.html">切换账号</a></li>
                         <li class="personalinfo"><a href="phone/personalInfo.html">账户信息</a></li>
                         <li id="logout" class="logout"><a href="#" onclick="$.qa.logout();return false;">注销账号</a></li>
                         <li class="updatePassword"><a href="phone/updatePassword.html">更换密码</a></li>
@@ -86,9 +85,8 @@
     <div class="main-content clear">
         <div class="left-content">
             <ul class="academy-index-tab">
-                <li class="active">财经信息</li>
-                <li data-type="1">测试资讯</li>
-                <!--<li data-type="2">干货分享</li>-->
+                <li class="active" data-type="1">财经信息</li>
+                <li class="" data-type="2">测试资讯</li>
             </ul>
             <div class="academy-index-content">
             </div>
@@ -184,16 +182,10 @@
 </div>
 <script id="article" type="text/html">
     {{each list as value i}}
-    <!--{{if value.type==aType||aType==""}}-->
-    <div class="academy-list">
+    <div class="academy-list news">
         <img src="{{value.pic?value.pic:'http://bj.bcebos.com/mtcapp//jpg/705dedad86915c1afa8b29bdcb485b37.jpg'}}">
         <div class="article-main">
             <div class="article-header">
-                <!--{{if value.type==2}}-->
-                <!--<span class="shares-icon">干货分享</span>-->
-                <!--{{else}}-->
-                <!--<span class="mtc-news-icon">行业动态</span>-->
-                <!--{{/if}}-->
                 <div class="a-title">
                     <h2>{{value.title}}</h2>
                 </div>
@@ -204,31 +196,43 @@
             <div class="article-footer">
                 <span class="mar-r15">来源：{{value.src}}</span>
                 <span>{{value.time}}</span>
-                <!--<a target="_blank" class="article-comments">评论（0）</a>-->
             </div>
         </div>
     </div>
-    <!--{{/if}}-->
+    {{/each}}
+</script>
+<script id="article1" type="text/html">
+    {{each results as value i}}
+    <div class="academy-list info">
+        <img src="http://bj.bcebos.com/mtcapp//jpg/705dedad86915c1afa8b29bdcb485b37.jpg">
+        <div class="article-main">
+            <div class="article-header">
+                <div class="a-title1" data-gid="{{value.ganhuo_id}}">
+                    <h2>{{value.desc}}</h2>
+                </div>
+            </div>
+            <div class="article-section">
+                <p>{{value.plainText}}</p>
+            </div>
+            <div class="article-footer">
+                <span class="mar-r15">作者：{{value.who}}</span>
+                <span>{{value.publishedAt}}</span>
+            </div>
+        </div>
+    </div>
     {{/each}}
 </script>
 <script src="js/template.js"></script>
 <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/idangerous.swiper.js"></script>
 <script src="js/index.js"></script>
+<script type="text/javascript" src="phone/js/global.js"></script>
+
 <script>
     $(document).ready(function () {
-        getNews(0,"财经");
+        $.qa.getLoginedInfo();
+        getNews(0, "财经");
     })
 </script>
 </body>
-
-
-    <script type="text/javascript" src="phone/js/jquery-3.2.0.min.js"></script>
-    <script type="text/javascript" src="phone/js/global.js"></script>
-    <script type="text/javascript">
-        (function () {
-            $.qa.getLoginedInfo();
-        }());
-    </script>
-
 </html>
