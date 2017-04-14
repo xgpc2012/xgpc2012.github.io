@@ -46,6 +46,12 @@ function getNews(start,channel) {
     // $.getJSON("http://api.jisuapi.com/news/get?channel=%E8%B4%A2%E7%BB%8F&start=0&num=10&appkey=ff1206dfe586a705",{},function (data) {
     //     console.log(data);
     // })
+    dialog = new TipBox({
+        type: 'load',
+        str: "加载中,请稍后",
+        setTime: 10000,
+        hasMask: true
+    });
     $.ajax({
         //你请求的地址
         url: "https://api.jisuapi.com/news/get",
@@ -71,15 +77,23 @@ function getNews(start,channel) {
             }
             console.log(res);
             showList(res);
+            dialog.close();
         },
         error: function () {
             //如果请求失败
             console.log("请求失败");
+            dialog.close();
         }
     })
 }
 
 function getNewsDetail(title){
+    dialog = new TipBox({
+        type: 'load',
+        str: "加载中,请稍后",
+        setTime: 10000,
+        hasMask: true
+    });
     $.ajax({
         //你请求的地址
         url: "https://api.jisuapi.com/news/get",
@@ -106,20 +120,29 @@ function getNewsDetail(title){
                     $("#src").text(li.src);
                     $("#time").text(li.time);
                     console.log(li);
+                    dialog.close();
+                    return;
                 }
             }
         },
         error: function () {
             //如果请求失败
             console.log("请求失败");
+            dialog.close();
         }
     })
 }
 
 function getArticle(page) {
+    dialog = new TipBox({
+        type: 'load',
+        str: "加载中,请稍后",
+        setTime: 10000,
+        hasMask: true
+    });
     $.ajax({
         //你请求的地址
-        url: "http://gank.io/api/search/query/listview/category/Android/count/5/page/"+page,
+        url: "http://gank.io/api/search/query/测试/category/all/count/5/page/"+page,
         //你请求的方式
         type: "GET",
         data: {},
@@ -133,8 +156,10 @@ function getArticle(page) {
                 data.results[i].plainText = getSimpleText(data.results[i].readability);
             }
             showList1(data);
+            dialog.close();
         },
         error: function () {
+            dialog.close();
             //如果请求失败
             console.log("请求失败");
         }
@@ -142,9 +167,15 @@ function getArticle(page) {
 }
 
 function getAtriclesDetail(gid){
+    dialog = new TipBox({
+        type: 'load',
+        str: "加载中,请稍后",
+        setTime: 10000,
+        hasMask: true
+    });
     $.ajax({
         //你请求的地址
-        url: "http://gank.io/api/search/query/listview/category/Android/count/20/page/1",
+        url: "http://gank.io/api/search/query/测试/category/all/count/20/page/1",
         //你请求的方式
         type: "GET",
         data: {},
@@ -160,12 +191,15 @@ function getAtriclesDetail(gid){
                     $("#who").text(li.who);
                     $("#time").text(transformTime(li.publishedAt));
                     console.log(li.readability);
+                    return;
                 }
             }
+            dialog.close();
         },
         error: function () {
             //如果请求失败
             console.log("请求失败");
+            dialog.close();
         }
     })
 }
@@ -204,3 +238,11 @@ $("#more").on("click",function(){
         getArticle(apage);
     }
 })
+
+if(template){
+    template.helper('getTime', function(time) {
+        var index1=time.indexOf("T");
+        return time.substring(0,index1)+" "+time.substr(index1+1,8);
+        //return time;
+    });
+}

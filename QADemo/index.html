@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/idangerous.swiper.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/mdialog.css">
     <link rel="stylesheet" href="phone/css/global.css">
     <script type="text/javascript">
         /**判断终端设备类型**/
@@ -216,7 +217,7 @@
             </div>
             <div class="article-footer">
                 <span class="mar-r15">作者：{{value.who}}</span>
-                <span>{{value.publishedAt}}</span>
+                <span>{{value.publishedAt | getTime}}</span>
             </div>
         </div>
     </div>
@@ -226,6 +227,7 @@
 <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/idangerous.swiper.js"></script>
 <script src="js/index.js"></script>
+<script src="js/mdialog.js"></script>
 <script type="text/javascript" src="phone/js/global.js"></script>
 
 <script>
