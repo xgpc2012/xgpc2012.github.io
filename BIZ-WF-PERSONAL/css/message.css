@@ -1,0 +1,73 @@
+.msg-top {
+    position: fixed;
+    top: 2.75rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.msg-tab {
+    height: 2.75rem;
+    text-align: center;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    position: relative;
+}
+
+.msg-text {
+    height: 1.3125rem;
+    line-height: 1.3125rem;
+    font-size: .9375rem;
+}
+
+.bg-num {
+    background-image: url("../images/bg-num.png");
+    width: .875rem;
+    height: .875rem;
+    background-size: 100% 100%;
+    position: absolute;
+    top: -0.4rem;
+    right: -0.9rem;
+}
+
+.message {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.message1 {
+    background-image: url("../images/message1.png");
+}
+
+.message2 {
+    background-image: url("../images/message2.png");
+}
+
+.message3 {
+    background-image: url("../images/message3.png");
+}
+
+.msg-list{
+    padding-top: 5.5rem;
+}
+
+.msg-item{
+    padding-left: .9375rem;
+    padding-right: .9375rem;
+    background-color: #FFFFFF;
+}
+
+.red-dot{
+    width: .4375rem;
+    height: .4375rem;
+    background-size: 100% 100%;
+    background-color: #F55050;
+    border-radius: .4375rem;
+    position: absolute;
+    top:0;
+    right: 0;
+}
