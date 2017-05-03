@@ -1,0 +1,24 @@
+/*图标相关的样式*/
+.icon-left {
+    background-image: url("icons/icon-left.png");
+}
+.icon-right {
+    background-image: url("icons/icon-right.png");
+    background-size: 100% 100%;
+}
+.icon-left2 {
+    background-image: url("icons/icon-left2.png");
+}
+
+.icon-search {
+    background-image: url("icons/icon-search.png");
+}
+.icon-check{
+    background-image: url("icons/icon-check.png");
+    background-size: 100% 100%;
+}
+
+.icon-uncheck{
+    background-image: url("icons/icon-uncheck.png");
+    background-size: 100% 100%;
+}

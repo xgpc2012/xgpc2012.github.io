@@ -1,0 +1,81 @@
+/*颜色相关的样式*/
+.t-f2 {
+    color: #F29E39;
+}
+
+.t-a7 {
+    color: #A7B0B5;
+}
+
+.t-2d {
+    color: #2DBBFD;
+}
+
+.t-00 {
+    color: #002B00;
+}
+
+.t-w {
+    color: white;
+}
+
+.t-60 {
+    color: #60676E;
+}
+
+.t-f7 {
+    color: #FF7A00;
+}
+
+.b-2d {
+    border-color: #2DBBFD;
+}
+
+.b-ff {
+    border-color: #FFFFFF;
+}
+
+.bg-ff2 {
+    background-color: rgba(0, 0, 0, 0.20);
+}
+
+.bg-2d {
+    background-color: #2DBBFD;
+}
+
+.bg-2d2 {
+    background-color: #2DBBFD;
+    opacity: 0.55;
+}
+
+.bg-f1 {
+    background-color: #F1F5F9;
+}
+
+.bg-f2 {
+    background-color: #F2F5F9;
+}
+
+.bg-f7 {
+    background-color: #FF7720;
+}
+
+.bg-83 {
+    background-color: #83C63F;
+}
+
+.bg-a3 {
+    background-color: #A359F3;
+}
+
+.b-e0 {
+    border-color: #E0E3EA;
+}
+
+.bg-1d {
+    background-color: #1DBAFF;
+}
+
+.bg-w {
+    background-color: white;
+}
