@@ -86,8 +86,8 @@
     <div class="main-content clear">
         <div class="left-content">
             <ul class="academy-index-tab">
-                <li class="active" data-type="1">财经信息</li>
-                <li class="" data-type="2">测试资讯</li>
+                <li class="active" data-type="2">测试资讯</li>
+                <li class="" data-type="1">财经信息</li>
             </ul>
             <div class="academy-index-content">
             </div>
@@ -233,7 +233,8 @@
 <script>
     $(document).ready(function () {
         $.qa.getLoginedInfo();
-        getNews(0, "财经");
+        //getNews(0, "财经");
+        getArticle(0);
     })
 </script>
 </body>

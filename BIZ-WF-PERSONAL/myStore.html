@@ -75,7 +75,7 @@
     </div>
 </div>
 
-<div class="relative bg-f1 hide">
+<div class="relative bg-f1">
     <!--店铺等级进度-->
     <div class="bg-w mar-t625 pad-t93 pad-lr93 pad-b75">
         <div class="box v-c">
@@ -147,28 +147,19 @@
 </div>
 </body>
 <script src="../BIZ-WF-COMMON/js/jquery.min.js"></script>
-<script src="js/jQueryRotate.js"></script>
+<!--<script src="js/jQueryRotate.js"></script>-->
 <script>
     var angle = 0;
     var angle1 = 180;
-    $("#house2").rotate(180);
-    $("body").rotate({
-        bind: {
-            click: function () {
-                $("#house1").rotate({
-                    angle: angle,
-                    center: ["50%", "100%"],
-                    animateTo: angle - 180
-                })
-                angle = angle - 180;
-                $("#house2").rotate({
-                    angle: angle1,
-                    center: ["50%", "100%"],
-                    animateTo: angle1 - 180
-                })
-                angle1 = angle1 - 180;
-            }
+    $("body").on("click",function () {
+        var bol=$("#house1").hasClass("move1");
+        if(bol){
+            $("#house1").removeClass("move1").addClass("move2");
+            $("#house2").removeClass("move2").addClass("move1");
+        }else{
+            $("#house1").removeClass("move2").addClass("move1");
+            $("#house2").removeClass("move1").addClass("move2");
         }
-    });
+    })
 </script>
 </html>

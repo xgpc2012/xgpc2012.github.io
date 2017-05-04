@@ -19,7 +19,7 @@
     position: absolute;
     bottom: 0;
     background-image: url("../images/earth.png");
-    background-position:top;
+    background-position: top;
     /*height: 47.15625rem;*/
     height: 6.7rem;
     width: 100%;
@@ -32,6 +32,7 @@
     width: 100%;
     background-size: 100% 100%;
 }
+
 .bg-home2 {
     position: absolute;
     top: 0;
@@ -39,30 +40,71 @@
     width: 100%;
     background-size: 100% 100%;
 }
-#house1{
+
+#house1 {
     position: absolute;
     bottom: -5rem;
     width: 100%;
 }
-#house2{
+
+#house2 {
     position: absolute;
     top: 27.1875rem;
     width: 100%;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
 }
+
+.move1 {
+    animation: rotate1 3s linear;
+    -webkit-animation: rotate1 3s linear;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.move2 {
+    animation: rotate2 3s linear;
+    -webkit-animation: rotate2 3s linear;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes rotate1 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-180deg);
+    }
+}
+
+@-webkit-keyframes rotate2 {
+    0% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 .bg-house {
     width: 3.75rem;
     height: 3.75rem;
     background-size: 100% 100%;
 }
+
 .bg-house1 {
     background-image: url("../images/house1.png");
 }
+
 .bg-house2 {
     background-image: url("../images/house2.png");
 }
+
 .bg-house3 {
     background-image: url("../images/house3.png");
 }
+
 .bg-housebj1 {
     background-image: url("../images/housebj-03.png");
 }
@@ -82,7 +124,6 @@
 .bg-housebj5 {
     background-image: url("../images/housebj-jiesuo05.png");
 }
-
 
 .bg-gradeprogress {
     background-image: url("../images/grade-progress.png");
