@@ -72,18 +72,22 @@
 @-webkit-keyframes rotate1 {
     0% {
         transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
     }
     100% {
         transform: rotate(-180deg);
+        -webkit-transform: rotate(-180deg);
     }
 }
 
 @-webkit-keyframes rotate2 {
     0% {
         transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
     }
     100% {
         transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
     }
 }
 
