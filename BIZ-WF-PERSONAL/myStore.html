@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="css/myStore.css">
     <title>我的店铺</title>
 </head>
-<body class="bg-f1">
+<body class="bg-f1 o-h">
 <!--店铺上半部分-->
-<div class="bg-store">
+<div class="bg-store" id="div1">
     <!--导航栏-->
     <div class="header box v-c t-w">
         <div class="pad-l93 mw5">
@@ -149,9 +149,7 @@
 <script src="../BIZ-WF-COMMON/js/jquery.min.js"></script>
 <!--<script src="js/jQueryRotate.js"></script>-->
 <script>
-    var angle = 0;
-    var angle1 = 180;
-    $("body").on("click",function () {
+    $("#div1").on("click",function () {
         var bol=$("#house1").hasClass("move1");
         if(bol){
             $("#house1").removeClass("move1").addClass("move2");
