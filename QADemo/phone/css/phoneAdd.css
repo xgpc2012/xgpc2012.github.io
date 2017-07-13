@@ -1,0 +1,55 @@
+.form {
+    text-align: left;
+    margin-left: 15%;
+}
+
+.form .row {
+    margin-bottom: 20px;
+}
+
+.form .col1 {
+    width: 10em;
+}
+
+.form .col2 {
+    width: 10em;
+}
+
+.from .col3 {
+    width: 15em;
+}
+
+.clearline {
+    width: 65%;
+    height: 1px;
+    padding: 0px;
+    background-color: #D5D5D5;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.form input {
+    color: black;
+}
+
+.form .submit {
+    margin-left: 28%;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.form select {
+    color: black;
+}
+
+.section-title {
+    margin: 10px 0;
+}
+
+.header-index.header {
+    overflow: visible;
+}
+
+.header .header-container {
+    overflow: visible;
+}

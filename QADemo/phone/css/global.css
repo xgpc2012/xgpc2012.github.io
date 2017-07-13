@@ -1,0 +1,23 @@
+#accountPulldown {
+    position: absolute;
+    width: 102px;
+    z-index: 10000;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+#accountPulldown li {
+    display: block;
+    padding-bottom: 0;
+}
+.footer {
+    z-index: 1;
+}
+
+.header-index.header {
+    overflow: visible;
+}
+
+.header .header-container {
+    overflow: visible;
+}
