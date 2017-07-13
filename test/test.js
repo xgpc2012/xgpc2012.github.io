@@ -4,8 +4,9 @@
 function moveToApp(mobile){
     var uri="umsapp://main.app/openwith?";
     var params="a=1&b=2";
-    var userAgent = navigator.userAgent;
-    alert(userAgent);
+    var u = navigator.userAgent;
+    var isAndroid=u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+    alert(isAndroid);
     //此处应当先判断设备类型
     //location.href="http://www.baidu.com";
     //location.href=uri;
