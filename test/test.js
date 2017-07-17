@@ -18,6 +18,7 @@ function moveToApp(mobile) {
         document.body.appendChild(ifr);
         window.setTimeout(function(){
             document.body.removeChild(ifr);
+            location.href="https://appsto.re/cn/_XZjeb.i";
         },3000)
     }
 }
