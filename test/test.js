@@ -9,9 +9,15 @@ function moveToApp(mobile) {
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
     if (isAndroid) {
         uri = "umsapp://main.app/openwith?";
+        location.href = uri + encodeURI(params);
     } else {
-        uri = "umsylsw://kouliang?";
+        //uri = "umsylsw://kouliang?";
+        var ifr = document.createElement('iframe');
+        ifr.src = 'umsylsw://kouliang?';
+        ifr.style.display = 'none';
+        document.body.appendChild(ifr);
+        window.setTimeout(function(){
+            document.body.removeChild(ifr);
+        },3000)
     }
-    //此处应当先判断设备类型
-    location.href = uri + encodeURI(params);
 }
