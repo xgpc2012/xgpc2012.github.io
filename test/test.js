@@ -13,7 +13,7 @@ function moveToApp(mobile) {
     } else {
         //uri = "umsylsw://kouliang?";
         var ifr = document.createElement('iframe');
-        ifr.src = 'umsylsw://kouliang?';
+        ifr.src = 'umsylsw://kouliang?'+params;
         ifr.style.display = 'none';
         document.body.appendChild(ifr);
         window.setTimeout(function(){
