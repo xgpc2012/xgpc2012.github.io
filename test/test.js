@@ -1,7 +1,7 @@
 /**
  * Created by pc on 2017/7/13.
  */
-function moveToApp(mobile) {
+function moveToApp(e,mobile) {
     var u = navigator.userAgent,
         uri = "",
         params = "key1=1&key2=2";
