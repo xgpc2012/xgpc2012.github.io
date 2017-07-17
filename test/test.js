@@ -11,14 +11,10 @@ function moveToApp(mobile) {
         uri = "umsapp://main.app/openwith?";
         location.href = uri + encodeURI(params);
     } else {
-        //uri = "umsylsw://kouliang?";
-        var ifr = document.createElement('iframe');
-        ifr.src = 'umsylsw://kouliang?'+params;
-        ifr.style.display = 'none';
-        document.body.appendChild(ifr);
-        window.setTimeout(function(){
-            document.body.removeChild(ifr);
-            location.href="https://appsto.re/cn/_XZjeb.i";
-        },3000)
+        uri = "umsylsw://kouliang?";
+        window.location.href = uri + encodeURI(params);
+        window.setTimeout(function () {
+            location.href = "https://appsto.re/cn/_XZjeb.i";
+        }, 3000)
     }
 }
