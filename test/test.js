@@ -22,30 +22,28 @@ function moveToApp(mobile) {
     }
 }
 
-function showMsg(){
-    var res=isWeiXin();
-        node1=document.getElementById("div1");
-    if(res){
-        node1.innerHTML="<p style='color: blue;'>如果用微信浏览器打开可以看到这排文字</p>";
-    }else{
-        node1.innerHTML="<p style='color: red;'>如果不在微信浏览器打开可以看到这排文字</p>";
+function showMsg() {
+    var res = isWeiXin();
+    node1 = document.getElementById("div1");
+    if (res) {
+        node1.innerHTML = "<p style='color: blue;'>如果用微信浏览器打开可以看到这排文字</p>";
+    } else {
+        node1.innerHTML = "<p style='color: red;'>如果不在微信浏览器打开可以看到这排文字</p>";
     }
 }
 
-function isWeiXin(){
+function isWeiXin() {
     var ua = window.navigator.userAgent.toLowerCase();
-    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+    if (ua.match(/MicroMessenger/i) == 'micromessenger') {
         return true;
-    }else{
+    } else {
         return false;
     }
-} 
+}
 
-function load(){
-    var res=isWeiXin();
-    if(!res){
-        var btn1 = document.getElementById("btn1");
-        btn1.onclick = moveToApp;
-    }
+function load() {
+    var res = isWeiXin();
+    var btn1 = document.getElementById("btn1");
+    btn1.onclick = moveToApp;
     showMsg();
 }
