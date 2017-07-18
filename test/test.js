@@ -14,6 +14,7 @@ function moveToApp(mobile) {
             location.href = "https://appsto.re/cn/_XZjeb.i";
         }, 2000)
     } else {
+        alert("!");
         uri = "umsylsw://kouliang?";
         location.href = uri + encodeURI(params);
         window.setTimeout(function () {
