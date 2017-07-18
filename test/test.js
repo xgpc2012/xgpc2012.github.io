@@ -21,3 +21,22 @@ function moveToApp(mobile) {
         }, 3000)
     }
 }
+
+function showMsg(){
+    var res=isWeiXin()
+        node1=document.getElementById("div1");
+    if(res){
+        node1.innerText="我是在微信内置浏览器里面";
+    }else{
+        node1.innerText="我是在普通浏览器里面";
+    }
+}
+
+function isWeiXin(){
+    var ua = window.navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+        return true;
+    }else{
+        return false;
+    }
+} 
