@@ -23,7 +23,7 @@ function moveToApp(mobile) {
 }
 
 function showMsg(){
-    var res=isWeiXin()
+    var res=isWeiXin();
         node1=document.getElementById("div1");
     if(res){
         node1.innerHTML="<p style='color: blue;'>如果用微信浏览器打开可以看到这排文字</p>";
@@ -40,3 +40,12 @@ function isWeiXin(){
         return false;
     }
 } 
+
+function load(){
+    var res=isWeiXin();
+    if(res){
+        var btn1 = document.getElementById("btn1");
+        btn1.onclick = moveToApp;
+    }
+    showMsg();
+}
