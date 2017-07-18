@@ -43,7 +43,7 @@ function isWeiXin(){
 
 function load(){
     var res=isWeiXin();
-    if(res){
+    if(!res){
         var btn1 = document.getElementById("btn1");
         btn1.onclick = moveToApp;
     }
