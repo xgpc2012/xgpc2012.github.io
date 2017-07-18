@@ -26,9 +26,9 @@ function showMsg(){
     var res=isWeiXin()
         node1=document.getElementById("div1");
     if(res){
-        node1.innerHTML="<p style='color: blue;'>我是在微信内置浏览器里面</p>";
+        node1.innerHTML="<p style='color: blue;'>如果用微信浏览器打开可以看到这排文字</p>";
     }else{
-        node1.innerHTML="<p style='color: red;'>我是在普通浏览器里面</p>";
+        node1.innerHTML="<p style='color: red;'>如果不在微信浏览器打开可以看到这排文字</p>";
     }
 }
 
