@@ -11,7 +11,7 @@ function moveToApp(mobile) {
         uri = "umsapp://main.app/openwith?";
         location.href = uri + encodeURI(params);
         window.setTimeout(function () {
-            location.href = "https://appsto.re/cn/_XZjeb.i";
+            location.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.chinaums.onlineservice";
         }, 2000)
     } else {
         uri = "umsylsw://kouliang?";
