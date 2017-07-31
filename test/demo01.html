@@ -11,16 +11,25 @@
             background-color: pink;
             display: inline-block;
         }
+        input{
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+            border: 1px solid red;
+        }
     </style>
 </head>
 <body>
+<input type="text" placeholder="请输入测试用手机号" id="mobile"><br><br><br>
 <button id="btn1">测试跳转用的按钮</button>
 <div id="div1"></div>
 <script src="test.js"></script>
 <script>
-    load();
-    var a="hhh";
-    console.log(JSON.stringify(a));
+    var btn1=document.getElementById("btn1");
+    btn1.onclick=function () {
+        var mobile=document.getElementById("mobile").value;
+        clickBtn(mobile);
+    };
 </script>
 </body>
 </html>

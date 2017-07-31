@@ -1,37 +1,45 @@
 /**
  * Created by pc on 2017/7/13.
  */
+
+//mobile为所填手机号
+//callback函数代表在微信内部点击按钮时执行的操作(显示提示语等等)
+function clickBtn(mobile,callback) {
+    var res = isWeiXin();
+    if (res) {
+        //这个地方提示请使用非微信浏览器打开浏览器打开
+        //呈现方式由口粮决定
+        callback();
+    } else {
+        moveToApp(mobile);
+    }
+}
+
+//跳转APP
 function moveToApp(mobile) {
     var u = navigator.userAgent,
         uri = "",
-        params = "key1=1&key2=2";
+        params = "key1=" + mobile;
     //终端类型判断
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
     if (isAndroid) {
         uri = "umsapp://main.app/openwith?";
         location.href = uri + encodeURI(params);
+        //没有安装app自动跳转下载页面
         window.setTimeout(function () {
-            location.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.chinaums.onlineservice";
-        }, 2000)
+            location.href = "http://app.chinaums.com/app/filedownload?appid=2844";
+        }, 3000)
     } else {
         uri = "umsylsw://kouliang?";
         location.href = uri + encodeURI(params);
+        //没有安装app自动跳转下载页面
         window.setTimeout(function () {
-            location.href = "https://appsto.re/cn/_XZjeb.i";
+            location.href = "http://app.chinaums.com/app/filedownload?appid=2844";
         }, 3000)
     }
 }
 
-function showMsg() {
-    var res = isWeiXin();
-    node1 = document.getElementById("div1");
-    if (res) {
-        node1.innerHTML = "<p style='color: blue;'>如果用微信浏览器打开可以看到这排文字</p>";
-    } else {
-        node1.innerHTML = "<p style='color: red;'>如果不在微信浏览器打开可以看到这排文字</p>";
-    }
-}
-
+//判断是否在微信内部浏览器
 function isWeiXin() {
     var ua = window.navigator.userAgent.toLowerCase();
     if (ua.match(/MicroMessenger/i) == 'micromessenger') {
@@ -39,11 +47,4 @@ function isWeiXin() {
     } else {
         return false;
     }
-}
-
-function load() {
-    var res = isWeiXin();
-    var btn1 = document.getElementById("btn1");
-    btn1.onclick = moveToApp;
-    showMsg();
 }
