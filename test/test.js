@@ -17,6 +17,7 @@ function clickBtn(mobile,callback) {
 
 //跳转APP
 function moveToApp(mobile) {
+    var mobile=mobile?mobile:"18616002500";
     var u = navigator.userAgent,
         uri = "",
         params = "key1=" + mobile;
