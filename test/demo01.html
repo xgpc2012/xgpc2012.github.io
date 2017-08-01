@@ -11,7 +11,8 @@
             background-color: pink;
             display: inline-block;
         }
-        input{
+
+        input {
             width: 200px;
             height: 50px;
             font-size: 20px;
@@ -22,13 +23,25 @@
 <body>
 <input type="tel" placeholder="请输入测试用手机号" id="mobile" maxlength="11"><br><br><br>
 <button id="btn1">测试跳转用的按钮</button>
+<a href="http://app.chinaums.com/app/filedownload?appid=2844" id="openApp">贴吧客户端</a>
 <div id="div1"></div>
 <script src="test.js"></script>
 <script>
-    var btn1=document.getElementById("btn1");
-    btn1.onclick=function () {
-        var mobile=document.getElementById("mobile").value;
+    var btn1 = document.getElementById("btn1");
+    btn1.onclick = function () {
+        var mobile = document.getElementById("mobile").value;
         clickBtn(mobile);
+    };
+    document.getElementById('openApp').onclick = function (e) {
+        // 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为
+        // 否则打开a标签的href链接
+        var ifr = document.createElement('iframe');
+        ifr.src = 'umsylsw://kouliang?';
+        ifr.style.display = 'none';
+        document.body.appendChild(ifr);
+        window.setTimeout(function () {
+            document.body.removeChild(ifr);
+        }, 3000)
     };
 </script>
 </body>
