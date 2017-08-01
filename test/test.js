@@ -36,7 +36,7 @@ function moveToApp(mobile) {
         //没有安装app自动跳转下载页面
         window.setTimeout(function () {
             var eTime=new Date();
-            if (eTime - sTime > 5000) {
+            if (eTime - sTime < 5000) {
                 location.href = "http://app.chinaums.com/app/filedownload?appid=2844";
             } else {
                 window.close();
