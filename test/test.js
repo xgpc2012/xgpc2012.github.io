@@ -4,7 +4,7 @@
 
 //mobile为所填手机号
 //callback函数代表在微信内部点击按钮时执行的操作(显示提示语等等)
-function clickBtn(mobile,callback) {
+function clickBtn(mobile, callback) {
     var res = isWeiXin();
     if (res) {
         //这个地方提示请使用非微信浏览器打开浏览器打开
@@ -17,7 +17,7 @@ function clickBtn(mobile,callback) {
 
 //跳转APP
 function moveToApp(mobile) {
-    var mobile=mobile?mobile:"18616002500";
+    var mobile = mobile ? mobile : "18616002500";
     var u = navigator.userAgent,
         uri = "",
         params = "key1=" + mobile;
@@ -32,12 +32,16 @@ function moveToApp(mobile) {
         }, 4000)
     } else {
         uri = "umsylsw://kouliang?";
-        //var startTime=new Date();
+        var startTime = new Date();
         location.href = uri + encodeURI(params);
         //没有安装app自动跳转下载页面
         window.setTimeout(function () {
-            location.href = "http://app.chinaums.com/app/filedownload?appid=2844";
-        }, 4000)
+            if (new Date() - startTime < 2000) {
+                //window.location = fail;
+            } else {
+                location.href = "http://app.chinaums.com/app/filedownload?appid=2844";
+            }
+        }, 500)
     }
 }
 
