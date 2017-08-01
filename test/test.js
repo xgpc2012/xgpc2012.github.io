@@ -39,7 +39,7 @@ function moveToApp(mobile) {
             if (eTime - sTime > 5000) {
                 location.href = "http://app.chinaums.com/app/filedownload?appid=2844";
             } else {
-                //window.close();
+                window.close();
             }
             //location.href = "http://app.chinaums.com/app/filedownload?appid=2844";
         }, 25);
