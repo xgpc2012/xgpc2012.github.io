@@ -32,20 +32,12 @@ function moveToApp(mobile) {
         }, 4000)
     } else {
         uri = "umsylsw://kouliang?";
-        // location.href = uri + encodeURI(params);
-        // //没有安装app自动跳转下载页面
-        // window.setTimeout(function () {
-        //     location.href = "http://app.chinaums.com/app/filedownload?appid=2844";
-        // }, 4000)
-        var ifr = document.createElement("iframe");
-        ifr.src = "umsylsw://kouliang?"; 
-        ifr.style.display = "none";
-        document.body.appendChild(ifr);
-        window.setTimeout(function(){
-            document.body.removeChild(ifr);
-            alert("!");
-            window.location.href = "http://app.chinaums.com/app/filedownload?appid=2844";
-        },10000)
+        //var startTime=new Date();
+        location.href = uri + encodeURI(params);
+        //没有安装app自动跳转下载页面
+        window.setTimeout(function () {
+            location.href = "http://app.chinaums.com/app/filedownload?appid=2844";
+        }, 4000)
     }
 }
 
