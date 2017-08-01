@@ -42,7 +42,7 @@ function moveToApp(mobile) {
                 //window.close();
             }
             //location.href = "http://app.chinaums.com/app/filedownload?appid=2844";
-        }, 25);
+        }, 1);
         location.href = uri + encodeURI(params);
     }
 }
