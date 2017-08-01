@@ -32,18 +32,11 @@ function moveToApp(mobile) {
         }, 4000)
     } else {
         uri = "umsylsw://kouliang?";
-        var sTime=new Date();
+        location.href = uri + encodeURI(params);
         //没有安装app自动跳转下载页面
         window.setTimeout(function () {
-            var eTime=new Date();
-            if (eTime - sTime < 5000) {
-                location.href = "http://app.chinaums.com/app/filedownload?appid=2844";
-            } else {
-                window.close();
-            }
-            //location.href = "http://app.chinaums.com/app/filedownload?appid=2844";
-        }, 25);
-        location.href = uri + encodeURI(params);
+            location.href = "http://app.chinaums.com/app/filedownload?appid=2844";
+        }, 4000)
     }
 }
 
