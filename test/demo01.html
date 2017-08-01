@@ -11,8 +11,7 @@
             background-color: pink;
             display: inline-block;
         }
-
-        input {
+        input{
             width: 200px;
             height: 50px;
             font-size: 20px;
@@ -23,24 +22,13 @@
 <body>
 <input type="tel" placeholder="请输入测试用手机号" id="mobile" maxlength="11"><br><br><br>
 <button id="btn1">测试跳转用的按钮</button>
-<a href="http://app.chinaums.com/app/filedownload?appid=2844" id="openApp">跳转用链接</a>
+<div id="div1"></div>
 <script src="test.js"></script>
 <script>
-    var btn1 = document.getElementById("btn1");
-    btn1.onclick = function () {
-        var mobile = document.getElementById("mobile").value;
+    var btn1=document.getElementById("btn1");
+    btn1.onclick=function () {
+        var mobile=document.getElementById("mobile").value;
         clickBtn(mobile);
-    };
-    document.getElementById('openApp').onclick = function(e){
-        uri = "umsapp://main.app/openwith?";
-        //location.href = uri + encodeURI(params);
-        var ifr = document.createElement('iframe');
-        ifr.src = uri;
-        ifr.style.display = 'none';
-        document.body.appendChild(ifr);
-        window.setTimeout(function(){
-            document.body.removeChild(ifr);
-        },3000)
     };
 </script>
 </body>
