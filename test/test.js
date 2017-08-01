@@ -43,8 +43,9 @@ function moveToApp(mobile) {
         document.body.appendChild(ifr);
         window.setTimeout(function(){
             document.body.removeChild(ifr);
+            alert("!");
             window.location.href = "http://app.chinaums.com/app/filedownload?appid=2844";
-        },2000)
+        },10000)
     }
 }
 
