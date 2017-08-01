@@ -25,11 +25,18 @@ function moveToApp(mobile) {
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
     if (isAndroid) {
         uri = "umsapp://main.app/openwith?";
-        location.href = uri + encodeURI(params);
-        //没有安装app自动跳转下载页面
-        window.setTimeout(function () {
-            location.href = "http://app.chinaums.com/app/filedownload?appid=2844";
-        }, 4000)
+        //location.href = uri + encodeURI(params);
+        var ifr = document.createElement('iframe');
+        ifr.src = uri + encodeURI(params);
+        ifr.style.display = 'none';
+        document.body.appendChild(ifr);
+        window.setTimeout(function(){
+            document.body.removeChild(ifr);
+        },3000)
+        // //没有安装app自动跳转下载页面
+        // window.setTimeout(function () {
+        //     location.href = "http://app.chinaums.com/app/filedownload?appid=2844";
+        // }, 4000)
     } else {
         uri = "umsylsw://kouliang?";
         // location.href = uri + encodeURI(params);
