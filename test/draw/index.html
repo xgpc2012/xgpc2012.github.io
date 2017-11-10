@@ -1,0 +1,336 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/activity.css">
+    <title>0元抢iPhone X</title>
+    <style>
+        .mask {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="bg-f2">
+<div id="intercept" class="hide"></div>
+<div class="header box">
+    <div class="pad-l093 pad-bt068 w-4" onclick="window.close()">
+        <div class="icon-left"></div>
+    </div>
+    <div class="f1">
+        0元抢iPhone X
+    </div>
+    <div class="pad-r093 w-4"></div>
+</div>
+<div class="main-content">
+    <!--随机banner图-->
+    <div class="bg-banner b-t relative">
+        <div class="bg-rule-small mar-t1" id="rule">
+            <p class="t-8b fz75 mar-l1">活动规则</p>
+        </div>
+        <div class="marquee" id="marquee">
+            <marquee scrollamount=2 id="prizeInfo" direction="left" scrolldelay="100"
+                     behavior="scroll" loop="-1"></marquee>
+        </div>
+    </div>
+    <div class="bg-banner1 tx-c">
+        <div class="pad-lr093 pad-t0875">
+            <div class="t-w box tDiv">
+                <div class="box h-center" id="rDiv">
+                    <div class="fz875 t-a7 mar-r068 ls5" id="rText"></div>
+                    <div class="box bg-time1">
+                        <div class="f1 pad-l034 tx-l" id="rhour">00</div>
+                        <div class="f1 tx-c" id="rmin">00</div>
+                        <div class="f1 tx-r pad-r034" id="rsec">00</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box mar-t11 t-a7">
+                <div class="pad-b0625 f1" id="timeInterval1">
+                    <div class="bg-transparent1 f1 pad-bt068">
+                        <p class="fz75 t-text hide">即将开始</p>
+                        <div>10:00 - 11:00</div>
+                    </div>
+                </div>
+                <div class="w-093"></div>
+                <div class="pad-b0625 f1" id="timeInterval2">
+                    <div class="bg-transparent1 f1 pad-bt068">
+                        <p class="fz75 t-text hide">即将开始</p>
+                        <div>16:00 - 17:00</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="bg-transparent1 pDiv">
+                <div class="box pad-t0375 pad-b05" id="prize">
+                    <div class="f1">
+                        <div class="icon-phone h-center"></div>
+                        <span class="time-text mar-t0375 p-text"></span>
+                        <span class="t-ff9 fz1125"><span id="phoneSurplusNo">--</span>台</span>
+                    </div>
+                    <div class="f1">
+                        <div class="icon-voucher h-center"></div>
+                        <span class="time-text mar-t0375 p-text"></span>
+                        <span class="t-ff9 fz1125"><span id="couponSurplusNo">--</span>张</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mar-t068">
+                <div class="bg-transparent2 fz75 pad-t1 pad-b125 t-50">
+                    <div class="box">
+                        <div class="box h-center">
+                            <div class="icon-fire mar-r031"></div>
+                            <p class="t-f8">11月13日-11月24日 每日均有机会获得抢夺机会！</p>
+                        </div>
+                    </div>
+                    <p class="mar-t075">首次进入活动页面参与活动,即可获得1次抢夺机会！</p>
+                    <p class="mar-t0125">每日点击[立即邀请]分享成功,即可获得1次抢夺机会！</p>
+                    <p class="mar-t0125">每成功邀请1位好友注册,即可额外获得1次抢夺机会！</p>
+                </div>
+            </div>
+
+            <div class="mar-t093">
+                <div class="box i-title">
+                    <div class="line1 mar-r031"></div>
+                    <p class="t-w fz875 f1 tx-l">我的邀请</p>
+                    <p class="t-2d fz75" onclick="toInviteDetail()">邀请明细
+                        ></p>
+                </div>
+                <div class="box mar-t15">
+                    <div class="f1">
+                        <p class="fz875 t-ff9"><span id="personNo">--</span>人</p>
+                        <p class="fz75 t-8e">成功邀请</p>
+                    </div>
+                    <div class="division-line"></div>
+                    <div class="f1">
+                        <p class="fz875 t-ff9"><span id="surplusCount">--</span>次</p>
+                        <p class="fz75 t-8e">剩余抢夺机会</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pad-b15">
+                <div class="mar-t125 my-prize box bg-transparent1"
+                     onclick="UmsApi.page.forwardBizPageByRelativeUrl('prizeDetail.html')">
+                    <div class="line1 mar-r031 v-center"></div>
+                    <p class="t-w fz875 f1 tx-l">我的奖品</p>
+                    <div class="icon-arrow v-center mar-r093"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="share" class="bg-mask hide">
+    <div class="bg-share">
+        <div class="icon-close" onclick="closeShare()"></div>
+        <div class="t-w fz1125 lh1-125 mar-t0625">喊好友抢iPhoneX</div>
+        <div class="box pad-lr093 t-8e fz75 mar-t23">
+            <div class="f1" onclick="shareInfo('1')">
+                <div class="icon-share icon-wx h-center"></div>
+                <div class="mar-t05">微信</div>
+            </div>
+            <div class="f1" onclick="shareInfo('2')">
+                <div class="icon-share icon-pyq h-center"></div>
+                <div class="mar-t05">朋友圈</div>
+            </div>
+            <div class="f1" onclick="shareInfo('3')">
+                <div class="icon-share icon-mdm h-center"></div>
+                <div class="mar-t05">面对面</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="ruleDetail" class="bg-mask hide">
+    <div class="bg-rule">
+        <div class="t-8b mar-t125">— 活动规则 —</div>
+        <div class="fz81 tx-l mar-t125 rule-text">
+            <p><span class="subtitle">一、活动时间:</span><br>
+                参与时间:11月13日-11月24日;<br>
+                开抢时间:11月22日-11月24日,每天 10:00-11:00 和 16:00-17:00。<br>
+                1. 用户在开抢时间段内,通过活动页面点击“马上抢”,即可参与抢夺活动;<br>
+                2. 活动期间如有部分奖品显示“剩余数量为0”,您可以在下一个开抢时间段刷新活动页面查看更新;<br>
+                3. 银联商务APP注册用户可在活动页面进行抢夺活动,本次抢夺并非100%中奖,会有[没抢到]出现,请知悉。</p>
+            <p class="mar-t05">
+                <span class="subtitle">二、抢夺活动规则</span><br>
+                1. 活动期间，用户首次进入活动页面参与活动，即可获得1次抢夺机会;<br>
+                2. 活动期间，用户首次点击“立即邀请”并分享成功后，可额外获得1次抢夺机会;<br>
+                3. 用户通过“立即邀请”分享页面，每成功邀请1位新用户注册“银联商务”APP，可额外获得1次抢夺机会;<br/>
+                4.一旦发现作弊行为，银联商务APP有权取消您的获奖资格。
+            </p>
+            <p class="mar-t05">
+                <span class="subtitle">三、奖品规则</span><br>
+                1. 活动奖品:<br>
+                [iphone X 64G]每个抢夺时段送出2台;<br>
+                [10元手机充值券]每个抢夺时段送出3000张;<br>
+                [5元手机充值券]每个抢夺时段送出14000张;<br>
+                2.手机充值券使用条件:请在有效期内登录银联商务APP使用,仅可给注册手机号充值；可以在“活动详情页-奖品明细”点击立即使用或点击APP“我的-我的优惠券”查看；在“我的-手机充值”进行使用;<br>
+                3.iPhone X 64G
+                (国行版)产品将在正式开售后60个工作日内发出,若正规市场渠道无法正常供应该产品,则会提供相同价值奖品,特殊情况另行通知(个人所得税需自理)。礼品来源官方授权供应商,暂不提供发票和售后服务,奖品售后问题请自行联络产品厂商咨询;<br>
+                4. 实物中奖名单将于2017年12月15日前在银联商务官方微信公众号中公布;<br>
+                5. 实物中奖后请您在2017年11月25日之前填写收货信息,并确保所填地址为有效邮寄收件地址。如因地址或手机号码错误所产生的一切不利后果,由用户本人承担。逾期不填将视为自愿放弃实物奖励。<br><br>
+                该活动最终解释权归银联商务股份有限公司所有;本活动及奖励与苹果公司无关。
+            </p>
+        </div>
+        <div class="pop-bottom" id="know">
+            <p>知道啦</p>
+        </div>
+    </div>
+</div>
+
+<!--点击马上抢: 获得手机充值券-->
+<div id="hintBox1" class="bg-mask hintBox hide">
+    <div class="bg-hint2 fz1125">
+        <div class="icon-close2 closePop"></div>
+        <div class="pop-title">恭喜您获得<span id="amount">5</span>元充值券</div>
+        <div class="pop-content fz68 mar-t05 pad-lr125">请在“我的-优惠券”或
+            “活动详情页-我的奖品”中查看
+        </div>
+        <div class="voucher h-center mar-t1"></div>
+        <div class="pop-bottom box fz1125">
+            <div class="f1" onclick="closeHintBox('1')">继续抢夺</div>
+            <div class="division-line2 v-center"></div>
+            <div class="f1" onclick="showShare('1')">炫耀一下</div>
+        </div>
+    </div>
+</div>
+
+<!--未中奖-->
+<div id="hintBox2" class="bg-mask hintBox hide">
+    <div class="bg-hint2 fz1125">
+        <div class="icon-close2 closePop"></div>
+        <div class="pop-title">很遗憾,您没能抢到</div>
+        <div class="pop-content fz875 mar-t0625">邀请更多好友参加,可以增加抢X机会！</div>
+        <div class="regret h-center mar-t1"></div>
+        <div class="pop-bottom box fz1125">
+            <div class="f1" onclick="closeHintBox('2')">继续抢夺</div>
+            <div class="division-line2 v-center"></div>
+            <div class="f1" onclick="showShare('3')">邀请好友</div>
+        </div>
+    </div>
+</div>
+
+<!--机会用完-->
+<div id="hintBox3" class="bg-mask hintBox hide">
+    <div class="bg-hint2 fz1125">
+        <div class="icon-close2 closePop"></div>
+        <div class="pop-title">您的机会已经用完了哦！</div>
+        <div class="pop-content fz875 mar-t0625">邀请好友注册APP,还可赢取更多机会</div>
+        <div class="regret h-center mar-t1"></div>
+        <div class="pop-bottom" onclick="showShare('4')">
+            <p>立即邀请</p>
+        </div>
+    </div>
+</div>
+
+<!--更新提示-->
+<div id="hintUpdate" class="bg-mask hintBox hide">
+    <div class="bg-pop">
+        <div class="u-bottom">
+            <div class="pad-lr31 pad-b15">
+                <div class="u-text">
+                    立马更新版本就有机会
+                    免费得IPhone X哦！
+                </div>
+            </div>
+            <div class="box pad-lr125 pad-b125">
+                <div class="f1">
+                    <div class="u-btn t-2d" id="closeUpdate">取消</div>
+                </div>
+                <div class="w-0625"></div>
+                <div class="f1">
+                    <div class="u-btn bg-2d t-w" id="update">更新</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-tab box tx-c">
+    <div class="i-btn f1" onclick="showShare()">立即邀请</div>
+    <div class="g-btn box f1" data-able="false">
+        <div class="box h-center">
+            <div class="mar-r031" onclick="proDraw()" id="gText">马上抢</div>
+            <div class="icon-grab v-center"></div>
+        </div>
+    </div>
+</div>
+
+<div class="qrcodeDiv hide">
+    <div class="icon-close" onclick="closeQRcode()"></div>
+    <div class="qrcode" id="qrcode">
+
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script>
+
+    showDiv("#hintUpdate");
+
+    //更新
+    $("#intercept").on("click", function () {
+        showDiv("#hintUpdate");
+    })
+
+    function showDiv(element, callback) {
+        disableScroll();
+        var $id = $(element);
+        if ($id.length > 0) {
+            $id.removeClass("hide");
+            callback && callback();
+        } else {
+            console.log("该元素不存在");
+        }
+    }
+
+    function hideDiv(element, callback) {
+        enableScroll();
+        var $id = $(element);
+        if ($id.length > 0) {
+            $id.addClass("hide");
+            callback && callback();
+        } else {
+            console.log("该元素不存在");
+        }
+    }
+
+    function disableScroll() {
+        //alert($('body').height() - $(".header").height())
+        $(".main-content").height($('body')[0].clientHeight - $(".header").height()).addClass("o-h");
+    }
+
+    function enableScroll() {
+        $(".main-content").removeClass("o-h");
+    }
+
+    $("#closeUpdate").on("click", function () {
+        hideDiv("#hintUpdate");
+        showDiv("#intercept");
+    })
+
+    $("#update").on("click", function () {
+        var isiOS = isiOSFunc();
+        if (isiOS) {
+            location.href = "itms-apps://itunes.apple.com/cn/app/%E9%93%B6%E8%81%94%E5%95%86%E5%8A%A1-%E6%8F%90%E4%BE%9B%E4%B8%93%E4%B8%9A%E7%9A%84%E8%B4%A6%E5%8A%A1%E5%92%8Cpos%E6%9C%8D%E5%8A%A1/id1143422079?mt=8"
+        } else {
+            location.href = "http://app.chinaums.com/app/filedownload?appid=2844";
+        }
+    })
+
+    function isiOSFunc() {
+        var u = navigator.userAgent;
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        return isiOS;
+    }
+
+</script>
+</body>
+</html>
