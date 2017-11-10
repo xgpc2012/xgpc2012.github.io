@@ -5,6 +5,21 @@
     }
 }
 
+.bg-pop {
+    background-image: url("../img/bg-pop.png");
+    background-size: 100% 100%;
+    width: 16.875rem;
+    height: 17.5rem;
+    position: absolute;
+    top: 0;
+    bottom: 4rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 1.0625rem;
+}
+
 .bg-banner {
     background-image: url("../img/bg-banner.png");
     background-size: 100% 100%;
@@ -450,21 +465,6 @@ input::-webkit-input-placeholder {
     right: 0;
     margin: auto;
     text-align: center;
-}
-
-.bg-pop {
-    background-image: url("../img/bg-pop.png");
-    background-size: 100% 100%;
-    width: 16.875rem;
-    height: 17.5rem;
-    position: absolute;
-    top: 0;
-    bottom: 4rem;
-    left: 0;
-    right: 0;
-    margin: auto;
-    text-align: center;
-    font-size: 1.0625rem;
 }
 
 .icon-close2 {
