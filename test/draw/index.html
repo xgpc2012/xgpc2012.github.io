@@ -186,51 +186,6 @@
     </div>
 </div>
 
-<!--点击马上抢: 获得手机充值券-->
-<div id="hintBox1" class="bg-mask hintBox hide">
-    <div class="bg-hint2 fz1125">
-        <div class="icon-close2 closePop"></div>
-        <div class="pop-title">恭喜您获得<span id="amount">5</span>元充值券</div>
-        <div class="pop-content fz68 mar-t05 pad-lr125">请在“我的-优惠券”或
-            “活动详情页-我的奖品”中查看
-        </div>
-        <div class="voucher h-center mar-t1"></div>
-        <div class="pop-bottom box fz1125">
-            <div class="f1" onclick="closeHintBox('1')">继续抢夺</div>
-            <div class="division-line2 v-center"></div>
-            <div class="f1" onclick="showShare('1')">炫耀一下</div>
-        </div>
-    </div>
-</div>
-
-<!--未中奖-->
-<div id="hintBox2" class="bg-mask hintBox hide">
-    <div class="bg-hint2 fz1125">
-        <div class="icon-close2 closePop"></div>
-        <div class="pop-title">很遗憾,您没能抢到</div>
-        <div class="pop-content fz875 mar-t0625">邀请更多好友参加,可以增加抢X机会！</div>
-        <div class="regret h-center mar-t1"></div>
-        <div class="pop-bottom box fz1125">
-            <div class="f1" onclick="closeHintBox('2')">继续抢夺</div>
-            <div class="division-line2 v-center"></div>
-            <div class="f1" onclick="showShare('3')">邀请好友</div>
-        </div>
-    </div>
-</div>
-
-<!--机会用完-->
-<div id="hintBox3" class="bg-mask hintBox hide">
-    <div class="bg-hint2 fz1125">
-        <div class="icon-close2 closePop"></div>
-        <div class="pop-title">您的机会已经用完了哦！</div>
-        <div class="pop-content fz875 mar-t0625">邀请好友注册APP,还可赢取更多机会</div>
-        <div class="regret h-center mar-t1"></div>
-        <div class="pop-bottom" onclick="showShare('4')">
-            <p>立即邀请</p>
-        </div>
-    </div>
-</div>
-
 <!--更新提示-->
 <div id="hintUpdate" class="bg-mask hintBox hide">
     <div class="bg-pop">
@@ -248,6 +203,24 @@
                 <div class="w-0625"></div>
                 <div class="f1">
                     <div class="u-btn bg-2d t-w" id="update">更新</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--更新提示-->
+<div id="hintUpdate2" class="bg-mask hintBox hide">
+    <div class="bg-pop">
+        <div class="u-bottom">
+            <div class="pad-lr31 pad-b15">
+                <div class="u-text">
+                    安卓用户请前去应用市场更新哦！
+                </div>
+            </div>
+            <div class="box pad-lr125 pad-b125">
+                <div class="f1">
+                    <div class="u-btn t-2d" id="closeUpdate2">取消</div>
                 </div>
             </div>
         </div>
@@ -316,12 +289,18 @@
         showDiv("#intercept");
     })
 
+    $("#closeUpdate2").on("click", function () {
+        hideDiv("#hintUpdate2");
+    })
+
     $("#update").on("click", function () {
         var isiOS = isiOSFunc();
         if (isiOS) {
             location.href = "itms-apps://itunes.apple.com/cn/app/%E9%93%B6%E8%81%94%E5%95%86%E5%8A%A1-%E6%8F%90%E4%BE%9B%E4%B8%93%E4%B8%9A%E7%9A%84%E8%B4%A6%E5%8A%A1%E5%92%8Cpos%E6%9C%8D%E5%8A%A1/id1143422079?mt=8"
         } else {
-            location.href = "http://app.chinaums.com/app/filedownload?appid=2844";
+            hideDiv("#hintUpdate");
+            showDiv("#hintUpdate2");
+            //location.href = "http://app.chinaums.com/app/filedownload?appid=2844";
         }
     })
 
