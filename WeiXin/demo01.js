@@ -32,18 +32,14 @@ function scan() {
 
 function getAccessToken() {
     $.ajax({
-        url: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential',
-        dataType: 'jsonp',
-        jsonp: 'cb',
-        data: {
-            "appid": "wxf9bcb16718854ae1",
-            "secret": "3a3ef361574bf7a26014eedfc473e5c0"
-        },
+        url: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxf9bcb16718854ae1&secret=3a3ef361574bf7a26014eedfc473e5c0',
+        type: "GET",
+        dataType: "jsonp",
         success: function (data) {
-            alert("1");
+            alert(JSON.stringify(data));
         },
         error: function (err) {
-            alert(err)
+            alert(err);
         }
     })
 }
