@@ -40,7 +40,7 @@ function getAccessToken() {
             "secret": "3a3ef361574bf7a26014eedfc473e5c0"
         },
         success: function (data) {
-            alert(JSON.stringify(data));
+            alert("1");
         },
         error: function (err) {
             alert(err)
