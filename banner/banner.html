@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            vertical-align: middle;
+            -webkit-backface-visibility: hidden;
+        }
+
+        img {
+            width: 640px;
+            height: 480px;
+        }
+
+        #banner {
+            width: 640px;
+            height: 480px;
+            margin: 50px auto;
+            position: relative;
+            border: 1px solid blue;
+            overflow: hidden;
+        }
+
+        div ul {
+            display: block;
+            position: absolute;
+            /*-webkit-transform:translate3d(0,0,0);*/
+            /*-webkit-backface-visibility: hidden;*/
+            /*-webkit-transform-style: preserve-3d;*/
+        }
+
+        div ul li {
+            float: left;
+        }
+
+        #buttons {
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            position: absolute;
+            margin: auto auto;
+            width: 140px;
+            height: 35px;
+        }
+
+        #buttons span {
+            height: 25px;
+            width: 25px;
+            background: yellow;
+            display: block;
+            border-radius: 50%;
+            float: left;
+            margin: 5px 5px;
+            cursor: pointer;
+        }
+
+        #buttons span.span1 {
+            background: red;
+        }
+
+        #prev {
+            position: absolute;
+            left: 10px;
+        }
+
+        #next {
+            position: absolute;
+            right: 10px;
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 40px;
+            bottom: 0;
+            top: 0;
+            height: 40px;
+            width: 40px;
+            margin: auto 0;
+            text-align: center;
+            display: none;
+        }
+
+        a:hover {
+            background: rgba(0, 0, 0, .4);
+        }
+
+        #banner:hover a {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="banner">
+    <ul id="myul">
+        <li><img src="1.jpg" alt=""/></li>
+        <li><img src="2.jpg" alt=""/></li>
+        <li><img src="3.jpg" alt=""/></li>
+        <li><img src="4.jpg" alt=""/></li>
+    </ul>
+    <div id="buttons">
+        <span class="span1"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <a href="javascript:;" id="prev">&lt;</a>
+    <a href="javascript:;" id="next">&gt;</a>
+</div>
+</body>
+<script>
+
+    let [
+        oUl,
+        aLi,
+        aBtn,
+        oLeft,
+        oRight
+    ] = [
+        document.querySelector('#myul'),
+        document.querySelectorAll('#myul li'),
+        document.querySelectorAll('#buttons>span'),
+        document.querySelector('#prev'),
+        document.querySelector('#next')
+    ];
+
+    class Banner {
+        constructor(obj, obj_li, btn, left, right, t = 3000) {
+            this.obj = obj;
+            this.obj_li = obj_li;
+            this.btn = btn;
+            this.left = left;
+            this.right = right;
+            this.time = null;
+            this.cur = 1;
+            this.flag = !0;//true
+            this.len = this.btn.length;
+            this.t = t;
+        }
+
+        init(classname) {
+            this.obj.appendChild(this.obj_li[0].cloneNode(true));
+            this.obj.insertBefore(this.obj_li[this.obj_li.length - 1].cloneNode(true), this.obj_li[0]);
+            this.obj.style.left = -this.obj_li[0].offsetWidth + 'px';//初始位置:-单张图片的宽度
+            this.obj.style.width = this.obj_li[0].offsetWidth * (this.obj_li.length + 2) + 'px';//定义总宽度
+            this.Play();//自动轮播
+            this.Left(classname);//左点击
+            this.Right(classname);//右点击
+            this.aBtn(classname);//小按钮点击
+        }
+
+        aBtn(classname) {
+            for (let i = 0; i < this.btn.length; i++) {
+                this.btn[i].onclick = () => {
+                    if (this.flag) {
+                        clearInterval(this.time);
+                        for (let i = 0; i < this.len; i++) this.btn[i].classList.remove(classname);
+                        this.obj.style.webkitTransition = 'all ease 1s';
+                        this.obj.style.mozTransition = 'all ease 1s';
+                        this.obj.style.msTransition = 'all ease 1s';
+                        this.obj.style.oTransition = 'all ease 1s';
+                        this.obj.style.transition = 'all ease 1s';
+                        this.btn[i].classList.add(classname);
+                        this.cur = i + 1;
+                        this.obj.style.left = -this.cur * this.obj_li[0].offsetWidth + 'px';
+                        this.obj.addEventListener('webkitTransitionEnd', () => {
+                            this.transitionEnd(this.obj_li.length + 1, 1, 1)
+                        }, !1);
+                        this.time = setInterval(() => {
+                            this.right.onclick();
+                        }, this.t);
+                    }
+                    this.flag = !1;
+                }
+            }
+        }
+
+        Play() {
+            clearInterval(this.time);
+            this.time = setInterval(() => {
+                this.right.onclick();
+            }, this.t)
+        }
+
+        Left(classname) {
+            this.left.onclick = () => {
+                if (this.flag) {
+                    clearInterval(this.time);
+                    this.obj.style.webkitTransition = 'all ease 1s';
+                    this.obj.style.mozTransition = 'all ease 1s';
+                    this.obj.style.msTransition = 'all ease 1s';
+                    this.obj.style.oTransition = 'all ease 1s';
+                    this.obj.style.transition = 'all ease 1s';
+                    this.cur--;
+                    for (let i = 0; i < this.len; i++) this.btn[i].classList.remove(classname);
+                    this.cur === 0 ? this.btn[this.btn.length - 1].classList.add(classname) : this.btn[this.cur - 1].classList.add(classname);
+                    this.obj.style.left = -this.cur * this.obj_li[0].offsetWidth + 'px';
+                    this.obj.addEventListener('webkitTransitionEnd', () => {
+                        this.transitionEnd(0, this.obj_li.length, this.obj_li.length)
+                    }, !1);
+                    this.time = setInterval(() => {
+                        this.right.onclick();
+                    }, this.t);
+                }
+                this.flag = !1;
+            }
+        }
+
+        Right(classname) {
+            this.right.onclick = () => {
+                if (this.flag) {
+                    clearInterval(this.time);
+                    this.obj.style.webkitTransition = 'all ease 1s';
+                    this.obj.style.mozTransition = 'all ease 1s';
+                    this.obj.style.msTransition = 'all ease 1s';
+                    this.obj.style.oTransition = 'all ease 1s';
+                    this.obj.style.transition = 'all ease 1s';
+                    this.cur++;
+                    for (let i = 0; i < this.len; i++) this.btn[i].classList.remove(classname);
+                    this.cur > this.obj_li.length ? this.btn[0].classList.add(classname) : this.btn[this.cur - 1].classList.add('span1');
+                    this.obj.style.left = -this.cur * this.obj_li[0].offsetWidth + 'px';
+                    this.obj.addEventListener('webkitTransitionEnd', () => {
+                        this.transitionEnd(this.obj_li.length + 1, 1, 1)
+                    }, !1);
+                    this.time = setInterval(() => {
+                        this.right.onclick();
+                    }, this.t);
+                }
+                this.flag = !1;
+            }
+        }
+
+        transitionEnd(len, index, fix) {
+            if (this.cur === len) {
+                this.obj.style.transition = 'none';
+                this.obj.style.left = -this.obj_li[0].offsetWidth * index + 'px';
+                this.cur = fix;
+            }
+            this.flag = !0;
+        }
+    }
+
+    let banner = new Banner(
+        obj = oUl,//轮播图的ul标签
+        obj_li = aLi,//轮播图每张图片li
+        btn = aBtn,//轮播图小按钮
+        left = oLeft,//轮播图左手柄
+        right = oRight,//轮播图右手柄
+        t = undefined//轮播图时间(默认3S)
+    );
+    banner.init(
+        classname = 'span1'//小按钮点击样式
+    );
+
+</script>
+</html>
