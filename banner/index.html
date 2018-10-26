@@ -104,7 +104,7 @@
         <li><img src="4.jpg" alt=""/></li>
         <li><img src="3.jpg" alt=""/></li>
         <li><img src="2.jpg" alt=""/></li>
-        <li><img src="4.jpg" alt=""/></li>
+        <li><img src="3.jpg" alt=""/></li>
     </ul>
     <div id="buttons">
         <span class="span1"></span>
@@ -184,10 +184,15 @@
         }
 
         Play() {
-            clearInterval(this.time);
-            this.time = setInterval(() => {
+            //clearInterval(this.time);
+            timeout=false;
+            // this.time = setInterval(() => {
+            //     this.right.onclick();
+            // }, this.t)
+
+            test(function () {
                 this.right.onclick();
-            }, this.t)
+            },this.t)
         }
 
         Left(classname) {
@@ -259,6 +264,5 @@
     banner.init(
         classname = 'span1'//小按钮点击样式
     );
-
 </script>
 </html>
