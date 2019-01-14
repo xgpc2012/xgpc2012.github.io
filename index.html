@@ -5,8 +5,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/lib/jquery-3.1.0.min.js"></script>
-    <script data-main="js/main" src="js/require.js"></script>
     <title>彭畅的个人博客主页</title>
 </head>
 <body class="bg-e1 pad-t75">
@@ -60,81 +58,14 @@
                     </form>
                 </div>
                 <!--发布内容结束-->
+
                 <!--个人动态列表-->
-                <div class="main_center mar-t20">
-                    <div class="status">
-                        <div class="bg-w pad-a20 br-t4">
-                            <div class="o-h">
-                                <div class="icon-avatar br-50 icon-size80 fl"></div>
-                                <div class="fl mar-l20">
-                                    <p class="mar-t20">xgpc2012</p>
-                                    <p class="t-9a mar-t16 in-b fz-14">3小时前</p>
-                                    <div class="icon-address2 in-b mar-l16"></div>
-                                    <p class="fz-14 in-b t-9a">北京 五道口</p>
-                                </div>
-                                <div class="pull-right mar-t16">
-                                    <div class="icon-size16 icon-star"></div>
-                                </div>
-                            </div>
-                            <p class="fz-14 t-9a mar-t20">开始工作！</p>
-                            <div class="o-h mar-t16">
-                                <div class="bg1 fl"></div>
-                                <div class="bg2 fl mar-l16"></div>
-                            </div>
-                        </div>
-                        <div class="bg-6a status_tab br-b4 tx-c">
-                            <div class="third pull-left">
-                                <div class="icon-size16 icon-see in-b"></div>
-                                <span>125</span>
-                            </div>
-                            <div class="third pull-left">
-                                <div class="icon-size16 icon-msg in-b"></div>
-                                <span>23</span>
-                            </div>
-                            <div class="third pull-left">
-                                <div class="icon-size16 icon-like in-b like"></div>
-                                <span>36</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="status mar-t20">
-                        <div class="bg-w pad-a20 br-t4">
-                            <div class="o-h">
-                                <div class="icon-avatar br-50 icon-size80 fl"></div>
-                                <div class="fl mar-l20">
-                                    <p class="mar-t20">xgpc2012</p>
-                                    <p class="t-9a mar-t16 in-b fz-14">3小时前</p>
-                                    <div class="icon-address2 in-b mar-l16"></div>
-                                    <p class="fz-14 in-b t-9a">北京 五道口</p>
-                                </div>
-                                <div class="pull-right mar-t16">
-                                    <div class="icon-size16 icon-star"></div>
-                                </div>
-                            </div>
-                            <p class="fz-14 t-9a mar-t20">开始工作！</p>
-                            <div class="o-h mar-t16">
-                                <div class="bg1 fl"></div>
-                                <div class="bg2 fl mar-l16"></div>
-                            </div>
-                        </div>
-                        <div class="bg-6a status_tab br-b4 tx-c">
-                            <div class="third pull-left">
-                                <div class="icon-size16 icon-see in-b"></div>
-                                <span>125</span>
-                            </div>
-                            <div class="third pull-left">
-                                <div class="icon-size16 icon-msg in-b"></div>
-                                <span>23</span>
-                            </div>
-                            <div class="third pull-left">
-                                <div class="icon-size16 icon-like in-b like"></div>
-                                <span>36</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="main_center mar-t20" id="article">
+
                 </div>
             </div>
         </div>
+
         <!--个人档-->
         <div class="left_nav">
             <div class="icon-avatar br-50 center icon-size120"></div>
@@ -187,77 +118,13 @@
                     <div class="pad-t16">
                         <p class="fz-14">2016年11月</p>
                         <p class="fz-48 mar-t28">16</p>
-                        <p class="fz-14 mar-t34">星期三</p>
+                        <p class="fz-14">星期三</p>
                     </div>
                 </div>
             </div>
-            <div class="mar-t20 br-4 friends bg-w" style="overflow: hidden">
-                <div class="pad-l32">
-                    <p class="t-b fz-14">我的好友</p>
-                </div>
-                <div class="pad-l28 pad-r28">
-                    <div class="mar-t28">
-                        <div class="icon-size60 icon-avatar1 fl"></div>
-                        <div class="h-60">
-                            <div class="pad-t14">
-                                <p class="t-b fz-14">张全蛋</p>
-                                <p class="t-b fz-14 t-9a mar-t16">富土康流水线工人</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mar-t28">
-                        <div class="icon-size60 icon-avatar1 fl"></div>
-                        <div class="h-60">
-                            <div class="pad-t14">
-                                <p class="t-b fz-14">张全蛋</p>
-                                <p class="t-b fz-14 t-9a mar-t16">富土康流水线工人</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mar-t28">
-                        <div class="icon-size60 icon-avatar1 fl"></div>
-                        <div class="h-60">
-                            <div class="pad-t14">
-                                <p class="t-b fz-14">张全蛋</p>
-                                <p class="t-b fz-14 t-9a mar-t16">富土康流水线工人</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mar-t28">
-                        <div class="icon-size60 icon-avatar1 fl"></div>
-                        <div class="h-60">
-                            <div class="pad-t14">
-                                <p class="t-b fz-14">张全蛋</p>
-                                <p class="t-b fz-14 t-9a mar-t16">富土康流水线工人</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="hide_friends" style="display: none;">
-                        <div class="mar-t28">
-                            <div class="icon-size60 icon-avatar1 fl"></div>
-                            <div class="h-60">
-                                <div class="pad-t14">
-                                    <p class="t-b fz-14">张全蛋</p>
-                                    <p class="t-b fz-14 t-9a mar-t16">富土康流水线工人</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mar-t28">
-                            <div class="icon-size60 icon-avatar1 fl"></div>
-                            <div class="h-60">
-                                <div class="pad-t14">
-                                    <p class="t-b fz-14">张全蛋</p>
-                                    <p class="t-b fz-14 t-9a mar-t16">富土康流水线工人</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="b1 mar-t16 b-e1" id="line1"></div>
-                </div>
-                <div class="pad-bt20" id="more">
-                    <p class="tx-c t-9a fz-14">展开更多</p>
-                </div>
-            </div>
+            <canvas id="clock" width="200" height="200">
+                <span>你的浏览器不支持canvas元素，换个浏览器试试吧</span>
+            </canvas>
         </div>
     </div>
 </div>
@@ -278,8 +145,31 @@
         </div>
     </div>
 </div>
-<script>
-    console.log(111111111111111222222221);
+<script src="js/lib/jquery-3.1.0.min.js"></script>
+<script src="js/lib/template.js"></script>
+<script src="js/main.js"></script>
+<script type="text/html" id="bHtml">
+    {{each list as val i}}
+    <div class="status mar-t20">
+        <div class="bg-w pad-a20 br-t4">
+            <div class="o-h">
+                <div class="icon-avatar br-50 icon-size80 fl"></div>
+                <div class="fl mar-l20">
+                    <p class="mar-t20">xgpc2012</p>
+                    <p class="t-9a mar-t16 in-b fz-14">3小时前</p>
+                    <div class="icon-address2 in-b mar-l16"></div>
+                    <p class="fz-14 in-b t-9a">武汉市 光谷软件园</p>
+                </div>
+                <div class="pull-right mar-t16">
+                    <div class="icon-size16 icon-star"></div>
+                </div>
+            </div>
+            <div class="mar-t20">
+                <a href="{{val.link}}">{{val.title}}</a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
 </script>
 </body>
 </html>
