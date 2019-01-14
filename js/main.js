@@ -6,9 +6,12 @@ $(document).ready(function () {
         }, {
             "title": "深入理解Javascript中的事件循环Event-loop",
             "link": "https://www.cnblogs.com/xiaohuochai/p/8527618.html"
-        },{
-            "title":"Javascript中的内存管理和垃圾回收",
-            "link":"https://www.cnblogs.com/xiaohuochai/p/8528677.html"
+        }, {
+            "title": "Javascript中的内存管理和垃圾回收",
+            "link": "https://www.cnblogs.com/xiaohuochai/p/8528677.html"
+        }, {
+            "title": "关于Javascript代码优化的8点建议",
+            "link": "https://www.cnblogs.com/xiaohuochai/p/8006285.html"
         }]
     };
     var html = template("bHtml", data);
